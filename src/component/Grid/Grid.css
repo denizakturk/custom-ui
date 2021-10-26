@@ -1,0 +1,16 @@
+.Custom.Custom-ui.Grid.Container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: top;
+    align-content: space-around;
+    gap: 15px;
+    column-gap: 10px;
+}
+
+.Custom.Custom-ui.Grid.Container .Item {
+    order: 12;
+    flex-grow: 1;
+}
