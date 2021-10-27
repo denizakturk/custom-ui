@@ -4,15 +4,19 @@
   "description": "React custom ui",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf dist",
+    "build": "npm run clean && rollup -c"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/denizakturk/custom-ui.git"
   },
-  "types": "dist/index.d.ts",
   "keywords": [
     "React",
     "custom",
@@ -30,6 +34,7 @@
     "@rollup/plugin-typescript": "^8.3.0",
     "@types/react": "^17.0.33",
     "react": "^17.0.2",
+    "rimraf": "^3.0.2",
     "rollup": "^2.58.3",
     "rollup-plugin-dts": "^4.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
