@@ -10,6 +10,9 @@ export interface GridItemProps {
     colSize?: GridItemColSize
     style?: any
     col?: number
+    hideOnly?: 'xs' | 'sm' | 'md' | 'l' | 'xl'
+    hideAndUp?: 'sm' | 'md' | 'l'
+    hideAndDown?: 'sm' | 'md' | 'l'
 }
 
 export interface GridItemColSize {

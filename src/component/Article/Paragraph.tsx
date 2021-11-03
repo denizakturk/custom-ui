@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
-import { PProps } from "./P.types";
-import './P.css'
-export const P: FC<PProps> = ({ children, fontFamily }: { children?: any, fontFamily?: string }) => {
+import { ParagraphProps } from "./Paragraph.types";
+import './Paragraph.css'
+export const Paragraph: FC<ParagraphProps> = ({ children, fontFamily }: { children?: any, fontFamily?: string }) => {
     let styl = {}
     if (fontFamily) {
         styl = { fontFamily: fontFamily, ...styl }

@@ -3,4 +3,5 @@ export interface ImageProps {
     fluid?: boolean
     rounded?: boolean
     style?: any
+    className?:string
 }

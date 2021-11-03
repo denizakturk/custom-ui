@@ -1,20 +1,20 @@
 import React, { FC } from 'react'
-import { HProps } from "./H.types"
-import './H.css'
+import { TextHeaderProps } from "./TextHeader.types"
+import './TextHeader.css'
 
-export const H: FC<HProps> = ({ type, text, children, style }: { type?: string, text?: string, children?: any, style?:any }) => {
+export const TextHeader: FC<TextHeaderProps> = ({ size, text, children, style }: { size?: string, text?: string, children?: any, style?:any }) => {
     return (
         <React.Fragment>
-            {getHeaderTitleType(type, text, children, style)}
+            {getHeaderTitleType(size, text, children, style)}
         </React.Fragment>
     )
 }
 
-function getHeaderTitleType(type?: string, text?: string, children?: any, style?:any) {
-    if (!type) {
-        type = 'h1'
+function getHeaderTitleType(size?: string, text?: string, children?: any, style?:any) {
+    if (!size) {
+        size = 'h1'
     }
-    switch (type) {
+    switch (size) {
         case 'h1':
             return (<h1>{text ? text : children}</h1 >)
             break;

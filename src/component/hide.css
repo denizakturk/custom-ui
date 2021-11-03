@@ -1,0 +1,81 @@
+
+@media (max-width: 320px) {
+	.hide-xs {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+   .hide-xs {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+   .hide-sm {
+		display: none;
+	}
+}
+
+/* Up and Down */
+@media only screen and (min-width: 768px) {
+   .hide-sm-and-up {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+   .hide-sm-and-down {
+		display: none;
+	}
+}
+/* Up and Down */
+
+
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .hide-md {
+		display: none;
+	}
+}
+
+/* Up and Down */
+@media only screen and (min-width: 1024px) {
+  .hide-md-and-up {
+		display: none;
+	}
+}
+@media only screen and (max-width: 1024px) {
+  .hide-md-and-down {
+		display: none;
+	}
+}
+/* Up and Down */
+
+
+
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  .hide-l {
+		display: none;
+	}
+}
+
+/* Up and Down */
+@media only screen and (min-width: 1200px) {
+  .hide-l-and-up {
+		display: none;
+	}
+}
+@media only screen and (max-width: 1200px) {
+  .hide-l-and-down {
+		display: none;
+	}
+}
+/* Up and Down */
+
+
+@media only screen and (min-width: 1201px) {
+   .hide-xl {
+		display: none;
+	}
+}

@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import './Grid.css';
+import './../hide.css'
 import { GridContainerProps, GridItemColSize, GridItemProps } from './Grid.types'
 
 export const GridContainer: FC<GridContainerProps> = ({ children, fullWidth = false, style, widthLimit }: { children?: any, fullWidth?: boolean, style?: any, widthLimit?: string }) => {
@@ -17,7 +18,17 @@ export const GridContainer: FC<GridContainerProps> = ({ children, fullWidth = fa
     )
 }
 
-export const GridItem: FC<GridItemProps> = ({ children, colSize, col, style }: { children?: any, colSize?: GridItemColSize, style?: any, col?: number }) => {
+export const GridItem: FC<GridItemProps> = ({ children, colSize, col, style, hideOnly, hideAndUp, hideAndDown }: { children?: any, colSize?: GridItemColSize, style?: any, col?: number, hideOnly?: string, hideAndUp?: string, hideAndDown?: string }) => {
+    let clsHide: string = ""
+    if (hideOnly) {
+        clsHide = ` hide-${hideOnly} `
+    }
+    if (hideAndUp) {
+        clsHide = ` hide-${hideAndUp}-and-up `
+    }
+    if (hideAndDown) {
+        clsHide = ` hide-${hideAndDown}-and-down `
+    }
     let clsColSize: string = ""
     if (typeof colSize != "undefined") {
         clsColSize = " " + Object.keys(colSize).map((key, index) => {
@@ -30,7 +41,7 @@ export const GridItem: FC<GridItemProps> = ({ children, colSize, col, style }: {
     if (col) {
         cl = ` col-${col}`
     }
-    const clsName = `Customized-UI Grid Item${clsColSize}${cl}`
+    const clsName = `Customized-UI Grid Item${clsColSize}${cl}${clsHide}`
     return (
         <div className={clsName} style={style}>
             {children}

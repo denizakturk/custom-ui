@@ -1,0 +1,11 @@
+.Customized-UI.Image {
+    vertical-align: middle;
+}
+
+.Customized-UI.Image.Fluid {
+    width: 100%;
+}
+
+.Customized-UI.Image.RoundedBorder {
+    border-radius: 2%;
+}
