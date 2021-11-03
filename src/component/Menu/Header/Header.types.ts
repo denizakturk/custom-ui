@@ -1,3 +1,5 @@
+import { SideMenuLinkGroups } from "../SideMenu/SideMenu.types";
+
 export interface HeaderProps {
     children?: any
     dropShadow?: boolean
@@ -5,4 +7,5 @@ export interface HeaderProps {
     slogan?:string
     fontFamily?:string
     brandName?:string
+    linkGroups?:SideMenuLinkGroups
 }

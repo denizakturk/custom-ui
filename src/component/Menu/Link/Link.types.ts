@@ -1,6 +1,7 @@
 export interface LinkProps {
     children?: any
-    link?: string
     icon?: string
     onClick?: any
+    style?: any
+    href?: string
 }
