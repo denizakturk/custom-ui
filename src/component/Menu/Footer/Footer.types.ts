@@ -5,4 +5,6 @@ export interface FooterProps {
     slogan?: string
     dropShadow?: boolean
     brandName?: string
+    className?: string
+    classNames?: string[]
 }

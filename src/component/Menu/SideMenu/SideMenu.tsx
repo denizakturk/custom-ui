@@ -4,8 +4,15 @@ import './SideMenu.css'
 import './../../hide.css'
 import { Icon } from '../../Icon';
 import { Link } from '../Link';
-import { GridContainer, GridItem } from '../../Grid';
-export const SideMenu: FC<SideMenuProps> = ({ children, linkGroups, style }: { children?: any, linkGroups?: SideMenuLinkGroups, style?: any }) => {
+import { GridContainer, GridItem } from '../../Container/Grid';
+import { ClassNames } from '../../ClassNames';
+export const SideMenu: FC<SideMenuProps> = ({ children, linkGroups, style, classNameBtn, classNamesBtn, classNameSideMenu, classNamesSideMenu, classNameOverlay, classNamesOverlay }: { children?: any, linkGroups?: SideMenuLinkGroups, style?: any, classNameBtn?: string, classNamesBtn?: string[], classNameSideMenu?: string, classNamesSideMenu?: string[], classNameOverlay?: string, classNamesOverlay?: string[] }) => {
+    let clsNBtn = new ClassNames(["Customized-UI", "SideMenu-Open-Icon-Click", "hide-sm-and-up"])
+    clsNBtn.add(classNameBtn).addMany(classNamesBtn)
+    let clsNSideMenu = new ClassNames(["Customized-UI", "SideMenu", "Hide", "hide-sm-and-up"])
+    clsNSideMenu.add(classNameSideMenu).addMany(classNamesSideMenu)
+    let clsNOverlay = new ClassNames(["Customized-UI", "SideMenu-Overlay", "Hide", "hide-sm-and-up"])
+    clsNOverlay.add(classNameOverlay).addMany(classNamesOverlay)
     let menuIsOpen = false
     let toggleMenu = () => {
         if (menuIsOpen) {
@@ -21,10 +28,10 @@ export const SideMenu: FC<SideMenuProps> = ({ children, linkGroups, style }: { c
     style = { overflowY: "scroll", ...style }
     return (
         <React.Fragment>
-            <a onClick={toggleMenu} className="Customized-UI SideMenu-Open-Icon-Click hide-sm-and-up">
+            <a onClick={toggleMenu} className={clsNBtn.getName()}>
                 <Icon name="menu_open" size={36} style={{ verticalAlign: "middle", float: "left" }} />
             </a>
-            <div className="Customized-UI SideMenu Hide hide-sm-and-up" id="Customized-UI-Sidebar-Menu" style={style}>
+            <div className={clsNSideMenu.getName()} id="Customized-UI-Sidebar-Menu" style={style}>
                 <Link icon="close" onClick={toggleMenu} style={{ position: "absolute", top: "15px", right: "15px" }} />
                 {linkGroups ?
                     <GridContainer>
@@ -51,7 +58,7 @@ export const SideMenu: FC<SideMenuProps> = ({ children, linkGroups, style }: { c
                     : null}
 
             </div>
-            <div className="Customized-UI SideMenu-Overlay Hide hide-sm-and-up" id="Customized-UI-Sidebar-Menu-Overlay" onClick={toggleMenu}></div>
+            <div className={clsNOverlay.getName()} id="Customized-UI-Sidebar-Menu-Overlay" onClick={toggleMenu}></div>
         </React.Fragment>
     )
 }

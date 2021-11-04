@@ -1,9 +1,12 @@
 import React, { FC } from 'react'
 import { IconProps } from "./Icon.types";
 import './Icon.css'
+import { ClassNames } from '../ClassNames';
 var fontLoad: boolean = false
 
-export const Icon: FC<IconProps> = ({ name, color, size, style, onClick }: { name: string, color?: string, size?: number, style?: any, onClick?: any }) => {
+export const Icon: FC<IconProps> = ({ name, color, size, style, onClick, className, classNames }: { name: string, color?: string, size?: number, style?: any, onClick?: any, className?: string, classNames?: string[] }) => {
+    let clsN = new ClassNames(["material-icons"])
+    clsN.add(className).addMany(classNames)
     if (!fontLoad && typeof window !== "undefined") {
         var sc = document.createElement("link");
         sc.setAttribute("href", "https://fonts.googleapis.com/css2?family=Material+Icons");
@@ -11,14 +14,11 @@ export const Icon: FC<IconProps> = ({ name, color, size, style, onClick }: { nam
         document.head.appendChild(sc);
         fontLoad = true
     }
-    let clsName: string = "material-icons"
-    let sizeCls: string
     if (size) {
-        sizeCls = "md-" + size
-        clsName += " " + sizeCls
+        clsN.add("md-" + size)
     }
     return (
-        <span className={clsName} style={style} onClick={onClick}>
+        <span className={clsN.getName()} style={style} onClick={onClick}>
             {name}
         </span>
     )

@@ -1,9 +1,12 @@
 import React, { FC } from 'react'
 import './Grid.css';
-import './../hide.css'
+import './../../hide.css'
 import { GridContainerProps, GridItemColSize, GridItemProps } from './Grid.types'
+import { ClassNames } from '../../ClassNames';
 
-export const GridContainer: FC<GridContainerProps> = ({ children, fullWidth = false, style, widthLimit }: { children?: any, fullWidth?: boolean, style?: any, widthLimit?: string }) => {
+export const GridContainer: FC<GridContainerProps> = ({ children, fullWidth = false, style, widthLimit, className, classNames }: { children?: any, fullWidth?: boolean, style?: any, widthLimit?: string, className?: string, classNames?: string[] }) => {
+    let clsN = new ClassNames(["Customized-UI", "Grid", "Container"])
+    clsN.add(className).addMany(classNames)
     let styl = {}
     if (!style?.width && fullWidth) {
         styl = { width: "100% important", ...style }
@@ -12,7 +15,7 @@ export const GridContainer: FC<GridContainerProps> = ({ children, fullWidth = fa
         styl = { maxWidth: widthLimit, ...styl }
     }
     return (
-        <div className="Customized-UI Grid Container" style={style}>
+        <div className={clsN.getName()} style={style}>
             {children}
         </div>
     )

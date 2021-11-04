@@ -3,6 +3,12 @@ export interface SideMenuProps {
     linkGroups?: any
     style?: any
     LinkGroups?: SideMenuLinkGroups
+    classNameSideMenu?: string
+    classNamesSideMenu?: string[]
+    classNameBtn?: string
+    classNamesBtn?: string[]
+    classNameOverlay?: string
+    classNamesOverlay?: string[]
 }
 
 export interface SideMenuLinkGroups {

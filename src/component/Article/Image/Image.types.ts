@@ -4,4 +4,5 @@ export interface ImageProps {
     rounded?: boolean
     style?: any
     className?:string
+    classnames?:string[]
 }

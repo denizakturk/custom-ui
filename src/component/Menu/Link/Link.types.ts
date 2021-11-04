@@ -4,4 +4,6 @@ export interface LinkProps {
     onClick?: any
     style?: any
     href?: string
+    className?: string
+    classNames?: string[]
 }

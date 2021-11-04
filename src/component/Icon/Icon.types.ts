@@ -4,4 +4,6 @@ export interface IconProps {
     size?: number
     style?: any
     onClick?: any
+    className?: string
+    classNames?: string[]
 }

@@ -3,6 +3,8 @@ export interface GridContainerProps {
     fullWidth?: boolean
     style?: any
     widthLimit?: string
+    className?: string
+    classNames?: string[]
 }
 
 export interface GridItemProps {

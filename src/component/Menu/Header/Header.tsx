@@ -2,24 +2,26 @@
 import React, { FC } from 'react'
 import { HeaderProps } from "./Header.types"
 import './Header.css'
-import { GridContainer, GridItem } from '../../Grid'
+import { GridContainer, GridItem } from '../../Container/Grid'
 import { TextHeader } from '../../Article'
 import { Logo } from './Logo'
 import { Slogan } from './Slogan'
 import { SideMenu } from './../SideMenu'
 import { SideMenuLinkGroups } from '../SideMenu/SideMenu.types'
+import { ClassNames } from '../../ClassNames'
 
-export const Header: FC<HeaderProps> = ({ linkGroups, children, dropShadow, logo, slogan, fontFamily, brandName }: { children?: any, dropShadow?: boolean, logo?: string, slogan?: string, fontFamily?: string, brandName?: string, linkGroups?: SideMenuLinkGroups }) => {
-  let cls = "Customized-UI Header"
+export const Header: FC<HeaderProps> = ({ className, classNames, linkGroups, children, dropShadow, logo, slogan, fontFamily, brandName }: { className?: string, classNames?: string[], children?: any, dropShadow?: boolean, logo?: string, slogan?: string, fontFamily?: string, brandName?: string, linkGroups?: SideMenuLinkGroups }) => {
+  let clsN = new ClassNames(["Customized-UI", "Header"])
+  clsN.add(className).addMany(classNames)
   if (dropShadow) {
-    cls += " BoxShadow"
+    clsN.add("BoxShadow")
   }
   let textHeaderStyl = {}
   if (fontFamily) {
     textHeaderStyl = { fontFamily: fontFamily, ...textHeaderStyl }
   }
   return (
-    <header className={cls}>
+    <header className={clsN.getName()}>
       {children ? children :
         <GridContainer style={{ padding: "0" }}>
           <GridItem col={6} hideAndUp={"sm"} style={{ textAlign: "center" }}>

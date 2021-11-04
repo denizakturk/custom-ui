@@ -2,8 +2,11 @@ import React, { FC } from 'react'
 import { LogoProps } from './Logo.types'
 import { Image } from '../../Article/Image'
 import './Logo.css'
-export const Logo: FC<LogoProps> = ({ src, style }: { src: string, style?:any }) => {
+import { ClassNames } from '../../ClassNames'
+export const Logo: FC<LogoProps> = ({ src, style, className, classNames }: { src: string, style?: any, className?: string, classNames?: string[] }) => {
+    let clsN = new ClassNames(['Logo'])
+    clsN.add(className).addMany(classNames)
     return (
-        <Image className="Logo" style={style} src={src} />
+        <Image className={clsN.getName()} style={style} src={src} />
     )
 }

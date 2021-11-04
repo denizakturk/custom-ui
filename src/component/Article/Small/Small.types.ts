@@ -1,5 +1,6 @@
-export interface LogoProps {
-    src: string
+
+export interface SmallProps {
+    children?: any
     className?: string
     classNames?: string[]
 }
