@@ -4,7 +4,7 @@ import './Icon.css'
 var fontLoad: boolean = false
 
 export const Icon: FC<IconProps> = ({ name, color, size, style, onClick }: { name: string, color?: string, size?: number, style?: any, onClick?: any }) => {
-    if (!fontLoad) {
+    if (!fontLoad && typeof window !== "undefined") {
         var sc = document.createElement("link");
         sc.setAttribute("href", "https://fonts.googleapis.com/css2?family=Material+Icons");
         sc.setAttribute("rel", "stylesheet");
