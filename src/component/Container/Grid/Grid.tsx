@@ -3,50 +3,50 @@ import './Grid.css';
 import './../../hide.css'
 import { GridContainerProps, GridItemColSize, GridItemProps } from './Grid.types'
 import { ClassNames } from '../../ClassNames';
+import { Styles } from '../../Styles';
 
 export const GridContainer: FC<GridContainerProps> = ({ children, fullWidth = false, style, widthLimit, className, classNames }: { children?: any, fullWidth?: boolean, style?: any, widthLimit?: string, className?: string, classNames?: string[] }) => {
+    let styl = new Styles(style)
     let clsN = new ClassNames(["Customized-UI", "Grid", "Container"])
     clsN.add(className).addMany(classNames)
-    let styl = {}
-    if (!style?.width && fullWidth) {
-        styl = { width: "100% important", ...style }
+    if (fullWidth) {
+        styl.add({ width: "100% important" })
     }
-    if (!style?.maxWidth && widthLimit) {
-        styl = { maxWidth: widthLimit, ...styl }
+    if (widthLimit) {
+        styl.add({ maxWidth: widthLimit })
     }
     return (
-        <div className={clsN.getName()} style={style}>
+        <div className={clsN.getName()} style={styl.getStyle()}>
             {children}
         </div>
     )
 }
 
 export const GridItem: FC<GridItemProps> = ({ children, colSize, col, style, hideOnly, hideAndUp, hideAndDown }: { children?: any, colSize?: GridItemColSize, style?: any, col?: number, hideOnly?: string, hideAndUp?: string, hideAndDown?: string }) => {
-    let clsHide: string = ""
+    let clsN = new ClassNames(["Customized-UI", "Grid", "Item"])
+    let styl = new Styles(style)
     if (hideOnly) {
-        clsHide = ` hide-${hideOnly} `
+        clsN.add(`hide-${hideOnly}`)
     }
     if (hideAndUp) {
-        clsHide = ` hide-${hideAndUp}-and-up `
+        clsN.add(`hide-${hideAndUp}-and-up`)
     }
     if (hideAndDown) {
-        clsHide = ` hide-${hideAndDown}-and-down `
+        clsN.add(`hide-${hideAndDown}-and-down`)
     }
-    let clsColSize: string = ""
+
     if (typeof colSize != "undefined") {
-        clsColSize = " " + Object.keys(colSize).map((key, index) => {
+        Object.keys(colSize).map((key, index) => {
             type StatusKey = keyof typeof colSize;
             let str: StatusKey = key as StatusKey;
-            return `${key}-${colSize[str]}`;
-        }).join(" ")
+            clsN.add(`${key}-${colSize[str]}`)
+        })
     }
-    let cl = ""
     if (col) {
-        cl = ` col-${col}`
+        clsN.add(`col-${col}`)
     }
-    const clsName = `Customized-UI Grid Item${clsColSize}${cl}${clsHide}`
     return (
-        <div className={clsName} style={style}>
+        <div className={clsN.getName()} style={styl.getStyle()}>
             {children}
         </div>
     )

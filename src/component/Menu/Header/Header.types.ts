@@ -10,4 +10,11 @@ export interface HeaderProps {
     linkGroups?: SideMenuLinkGroups
     className?: string
     classNames?: string[]
+    styles?: HeaderStylesProps
+}
+
+export interface HeaderStylesProps {
+    logoGridItem?: any
+    brandName?: any
+    sloganGridIteö?: any
 }

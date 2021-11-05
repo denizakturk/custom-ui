@@ -3,4 +3,5 @@ export interface ParagraphProps {
     fontFamily?: string
     className?: string
     classNames?: string[]
+    style?: any
 }

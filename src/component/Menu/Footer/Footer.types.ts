@@ -1,5 +1,6 @@
 export interface FooterProps {
     style?: any
+    styles?: FooterStylesProps
     children?: any
     logo?: string
     slogan?: string
@@ -7,4 +8,11 @@ export interface FooterProps {
     brandName?: string
     className?: string
     classNames?: string[]
+}
+
+export interface FooterStylesProps {
+    logoGridItem?: any
+    brandGradItem?: any
+    sloganGridItem?: any
+    slogan?: any
 }

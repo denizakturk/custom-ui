@@ -2,13 +2,15 @@ import React, { FC } from 'react'
 import { TextHeaderProps } from "./TextHeader.types"
 import './TextHeader.css'
 import { ClassNames } from '../../ClassNames'
+import { Styles } from '../../Styles'
 
 export const TextHeader: FC<TextHeaderProps> = ({ size, text, children, style, className, classNames }: { size?: string, text?: string, children?: any, style?: any, className?: string, classNames?: string[] }) => {
+    let styl = new Styles(style)
     let clsN = new ClassNames(['Customized-UI']);
     clsN.add(className).addMany(classNames)
     return (
         <React.Fragment>
-            {getHeaderTitleType(size, text, children, style, clsN.getName())}
+            {getHeaderTitleType(size, text, children, styl.getStyle(), clsN.getName())}
         </React.Fragment>
     )
 }
@@ -19,7 +21,7 @@ function getHeaderTitleType(size?: string, text?: string, children?: any, style?
     }
     switch (size) {
         case 'h1':
-            return (<h1>{text ? text : children}</h1 >)
+            return (<h1 className={className} style={style}>{text ? text : children}</h1 >)
             break;
         case 'h2':
             return (<h2 className={className} style={style}>{text ? text : children}</h2 >)
