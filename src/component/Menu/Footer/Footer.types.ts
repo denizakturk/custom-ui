@@ -8,6 +8,7 @@ export interface FooterProps {
     brandName?: string
     className?: string
     classNames?: string[]
+    widthLimit?: string
 }
 
 export interface FooterStylesProps {

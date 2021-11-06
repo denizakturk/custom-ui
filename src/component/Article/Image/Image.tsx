@@ -3,7 +3,7 @@ import { ImageProps } from './Image.types'
 import './Image.css'
 import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'
-export const Image: FC<ImageProps> = ({ src, fluid, rounded, style, className, classNames }: { src?: string, fluid?: boolean, rounded?: boolean, style?: any, className?: string, classNames?: string[] }) => {
+export const Image: FC<ImageProps> = ({ src, fluid, rounded, style, className, classNames, heightFit }: { src?: string, fluid?: boolean, rounded?: boolean, style?: any, className?: string, classNames?: string[], heightFit?: string }) => {
     let clsN = new ClassNames(["Customized-UI", "Image"])
     let styl = new Styles(style)
     clsN.add(className).addMany(classNames)
@@ -13,5 +13,8 @@ export const Image: FC<ImageProps> = ({ src, fluid, rounded, style, className, c
     if (rounded) {
         clsN.add("RoundedBorder")
     }
-    return (<img src={src} className={clsN.getName()} style={styl.getStyle()} />)
+    if(heightFit){
+        clsN.add("HeightFit")
+    }
+    return (<img src={src} className={clsN.getName()} style={styl.getStyle()} height={heightFit ?? "auto"} />)
 }

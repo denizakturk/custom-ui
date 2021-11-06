@@ -11,14 +11,15 @@ import { SideMenuLinkGroups } from '../SideMenu/SideMenu.types'
 import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'
 
-export const Header: FC<HeaderProps> = ({ className, classNames, linkGroups, children, dropShadow, logo, slogan, fontFamily, brandName, styles }: { className?: string, classNames?: string[], children?: any, dropShadow?: boolean, logo?: string, slogan?: string, fontFamily?: string, brandName?: string, linkGroups?: SideMenuLinkGroups, styles?: HeaderStylesProps }) => {
+export const Header: FC<HeaderProps> = ({ style, widthLimit, className, classNames, linkGroups, children, dropShadow, logo, slogan, fontFamily, brandName, styles }: { style?:any, widthLimit?: string, className?: string, classNames?: string[], children?: any, dropShadow?: boolean, logo?: string, slogan?: string, fontFamily?: string, brandName?: string, linkGroups?: SideMenuLinkGroups, styles?: HeaderStylesProps }) => {
   let clsN = new ClassNames(["Customized-UI", "Header"])
+  let styl = new Styles(style)
   let stylLogoGridItem = new Styles({ textAlign: "center" })
   let stylTextHeader = new Styles(styles?.brandName)
   let stylSloganGridItem = new Styles({ textAlign: "right", verticalAlign: "middle" })
   stylTextHeader.add(styles?.brandName)
   stylLogoGridItem.add(styles?.logoGridItem)
-  stylSloganGridItem.add(styles?.sloganGridIteö)
+  stylSloganGridItem.add(styles?.sloganGridItem)
   clsN.add(className).addMany(classNames)
   if (dropShadow) {
     clsN.add("BoxShadow")
@@ -27,9 +28,9 @@ export const Header: FC<HeaderProps> = ({ className, classNames, linkGroups, chi
     stylTextHeader.add({ fontFamily: fontFamily })
   }
   return (
-    <header className={clsN.getName()}>
+    <header className={clsN.getName()} style={styl.getStyle()}>
       {children ? children :
-        <GridContainer style={{ padding: "0" }}>
+        <GridContainer style={{ padding: "0" }} widthLimit={widthLimit}>
           <GridItem col={6} hideAndUp={"sm"} style={stylLogoGridItem.getStyle()}>
             <TextHeader size="h5" style={stylTextHeader.getStyle()}>
               <SideMenu linkGroups={linkGroups}>SideMenuBar</SideMenu>

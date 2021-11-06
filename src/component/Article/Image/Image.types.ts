@@ -3,6 +3,7 @@ export interface ImageProps {
     fluid?: boolean
     rounded?: boolean
     style?: any
-    className?:string
-    classnames?:string[]
+    className?: string
+    classnames?: string[]
+    heightFit?: string
 }

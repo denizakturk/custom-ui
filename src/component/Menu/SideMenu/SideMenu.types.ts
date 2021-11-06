@@ -2,6 +2,7 @@ export interface SideMenuProps {
     children?: any
     linkGroups?: any
     style?: any
+    styles?: SideMenuStylesProps
     LinkGroups?: SideMenuLinkGroups
     classNameSideMenu?: string
     classNamesSideMenu?: string[]
@@ -9,6 +10,18 @@ export interface SideMenuProps {
     classNamesBtn?: string[]
     classNameOverlay?: string
     classNamesOverlay?: string[]
+    openMenuIconName?: string
+}
+
+export interface SideMenuStylesProps {
+    closeButton?: SideMenuCloseButtonStyles
+    openMenuIcon?: any
+    linkGrid?: any
+}
+
+export interface SideMenuCloseButtonStyles {
+    link?: any
+    icon?: any
 }
 
 export interface SideMenuLinkGroups {

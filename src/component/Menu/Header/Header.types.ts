@@ -11,10 +11,12 @@ export interface HeaderProps {
     className?: string
     classNames?: string[]
     styles?: HeaderStylesProps
+    style?: any
+    widthLimit?: string
 }
 
 export interface HeaderStylesProps {
     logoGridItem?: any
     brandName?: any
-    sloganGridIteö?: any
+    sloganGridItem?: any
 }

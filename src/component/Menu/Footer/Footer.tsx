@@ -5,7 +5,7 @@ import { FooterProps, FooterStylesProps } from './Footer.types'
 import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'
 
-export const Footer: FC<FooterProps> = ({ children, style, styles, logo, brandName, slogan, dropShadow, className, classNames }: { children?: any, style?: any, styles?: FooterStylesProps, logo?: string, brandName?: string, slogan?: string, dropShadow?: boolean, className?: string, classNames?: string[] }) => {
+export const Footer: FC<FooterProps> = ({ children, style, styles, logo, brandName, slogan, dropShadow, className, classNames, widthLimit }: { children?: any, style?: any, styles?: FooterStylesProps, logo?: string, brandName?: string, slogan?: string, dropShadow?: boolean, className?: string, classNames?: string[], widthLimit?: string }) => {
     let clsN = new ClassNames(["Customized-UI", "Footer"])
     let styl = new Styles(style)
     let stylLogoGridItem = new Styles({ textAlign: "center" })
@@ -23,7 +23,7 @@ export const Footer: FC<FooterProps> = ({ children, style, styles, logo, brandNa
     return (
         <footer className={clsN.getName()} style={styl.getStyle()}>
             {children ??
-                <GridContainer>
+                <GridContainer widthLimit={widthLimit}>
                     {logo ? <GridItem col={12} style={stylLogoGridItem.getStyle()}>
                         <Logo src={logo ?? ""} />
                     </GridItem> : null}
