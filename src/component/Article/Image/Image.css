@@ -2,8 +2,8 @@
     vertical-align: middle;
 }
 
-.Customized-UI.Image.Fluid {
-    width: 100%;
+.Customized-UI.Image.Fluid, .Customized-UI.Image.HeightFit.Fluid {
+    width: 100% !important;
 }
 
 .Customized-UI.Image.RoundedBorder {
@@ -15,7 +15,7 @@
     border-top-right-radius: 8px;
 }
 
-.Customized-UI.HeightFit {
+.Customized-UI.Image.HeightFit {
     object-fit: cover;
     background-size: cover;
     background-repeat: no-repeat;

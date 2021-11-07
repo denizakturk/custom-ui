@@ -11,12 +11,12 @@ import { SideMenuLinkGroups } from '../SideMenu/SideMenu.types'
 import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'
 
-export const Header: FC<HeaderProps> = ({ style, widthLimit, className, classNames, linkGroups, children, dropShadow, logo, slogan, fontFamily, brandName, styles }: { style?:any, widthLimit?: string, className?: string, classNames?: string[], children?: any, dropShadow?: boolean, logo?: string, slogan?: string, fontFamily?: string, brandName?: string, linkGroups?: SideMenuLinkGroups, styles?: HeaderStylesProps }) => {
+export const Header: FC<HeaderProps> = ({ style, widthLimit, className, classNames, linkGroups, children, dropShadow, logo, slogan, fontFamily, brandName, styles }: { style?: any, widthLimit?: string, className?: string, classNames?: string[], children?: any, dropShadow?: boolean, logo?: string, slogan?: string, fontFamily?: string, brandName?: string, linkGroups?: SideMenuLinkGroups, styles?: HeaderStylesProps }) => {
   let clsN = new ClassNames(["Customized-UI", "Header"])
   let styl = new Styles(style)
-  let stylLogoGridItem = new Styles({ textAlign: "center" })
+  let stylLogoGridItem = new Styles({ textAlign: "center", margin: "0" })
   let stylTextHeader = new Styles(styles?.brandName)
-  let stylSloganGridItem = new Styles({ textAlign: "right", verticalAlign: "middle" })
+  let stylSloganGridItem = new Styles({ textAlign: "right", verticalAlign: "middle", margin: "0" })
   stylTextHeader.add(styles?.brandName)
   stylLogoGridItem.add(styles?.logoGridItem)
   stylSloganGridItem.add(styles?.sloganGridItem)
@@ -31,16 +31,16 @@ export const Header: FC<HeaderProps> = ({ style, widthLimit, className, classNam
     <header className={clsN.getName()} style={styl.getStyle()}>
       {children ? children :
         <GridContainer style={{ padding: "0" }} widthLimit={widthLimit}>
-          <GridItem col={6} hideAndUp={"sm"} style={stylLogoGridItem.getStyle()}>
+          <GridItem col={12} hideAndUp={"sm"} style={stylLogoGridItem.getStyle()}>
             <TextHeader size="h5" style={stylTextHeader.getStyle()}>
-              <SideMenu linkGroups={linkGroups}>SideMenuBar</SideMenu>
+              <SideMenu linkGroups={linkGroups}/>
               {logo ? <Logo src={logo ?? ""} /> : null}
               {brandName}
             </TextHeader>
           </GridItem>
-          <GridItem col={6} hideAndDown={"sm"}>
+          <GridItem col={6} hideAndDown={"sm"} style={{ margin: "0" }}>
             <TextHeader size="h5" style={stylTextHeader.getStyle()}>
-              <SideMenu linkGroups={linkGroups}>SideMenuBar</SideMenu>
+              <SideMenu linkGroups={linkGroups}/>
               {logo ? <Logo src={logo ?? ""} /> : null}
               {brandName}
             </TextHeader>

@@ -6,7 +6,8 @@ export interface LinkProps {
     styles?: LinkStylesProps
     href?: string
     className?: string
-    classNames?: string[]
+    classNames?: string[],
+    iconSize?: 18 | 24 | 36 | 48
 }
 
 export interface LinkStylesProps {

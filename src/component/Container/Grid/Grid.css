@@ -8,56 +8,73 @@
     align-content: space-around;
     gap: 5px 8px;
     column-gap: 8px;
-    width:96%;
+    width: 96%;
     padding: 2%;
+}
+
+.Customized-UI.Grid.Item {
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-1 {
     flex: 1 8%;
+    max-width: 8%;
 }
 
 .Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-2 {
     flex: 1 16%;
+    max-width: 16%;
 }
 
 .Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-3 {
     flex: 1 24%;
+    max-width: 24%;
 }
 
 .Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-4 {
     flex: 1 32%;
+    max-width: 32%;
 }
 
 .Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-5 {
     flex: 1 40%;
+    max-width: 40%;
 }
 
 .Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-6 {
     flex: 1 48%;
+    max-width: 48%;
 }
 
 .Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-7 {
     flex: 1 56%;
+    max-width: 56%;
 }
 
 .Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-8 {
     flex: 1 64%;
+    max-width: 64%;
 }
 
 .Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-9 {
     flex: 1 72%;
+    max-width: 72%;
 }
 
 .Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-10 {
     flex: 1 80%;
+    max-width: 80%;
 }
 
 .Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-11 {
     flex: 1 88%;
+    max-width: 88%;
 }
 
 .Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-12 {
     flex: 1 96%;
+    max-width: 96%;
 }
 
 @media (max-width: 320px) {
@@ -69,194 +86,254 @@
 @media only screen and (min-width: 320px) and (max-width: 480px) {
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-1, .Customized-UI.Grid.Container .Customized-UI.Grid.Item {
         flex: 1 8%;
+        max-width: 8%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-2 {
         flex: 1 16%;
+        max-width: 16%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-3 {
         flex: 1 24%;
+        max-width: 24%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-4 {
         flex: 1 32%;
+        max-width: 32%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-5 {
         flex: 1 40%;
+        max-width: 40%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-6 {
         flex: 1 48%;
+        max-width: 48%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-7 {
         flex: 1 56%;
+        max-width: 56%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-8 {
         flex: 1 64%;
+        max-width: 64%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-9 {
         flex: 1 72%;
+        max-width: 72%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-10 {
         flex: 1 80%;
+        max-width: 80%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-11 {
         flex: 1 88%;
+        max-width: 88%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-12 {
         flex: 1 96%;
+        max-width: 96%;
     }
 }
 
 @media only screen and (min-width: 481px) and (max-width: 768px) {
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-1, .Customized-UI.Grid.Container .Customized-UI.Grid.Item {
         flex: 1 8%;
+        max-width: 8%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-2 {
         flex: 1 16%;
+        max-width: 16%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-3 {
         flex: 1 24%;
+        max-width: 24%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-4 {
         flex: 1 32%;
+        max-width: 32%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-5 {
         flex: 1 40%;
+        max-width: 40%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-6 {
         flex: 1 48%;
+        max-width: 48%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-7 {
         flex: 1 56%;
+        max-width: 56%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-8 {
         flex: 1 64%;
+        max-width: 64%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-9 {
         flex: 1 72%;
+        max-width: 72%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-10 {
         flex: 1 80%;
+        max-width: 80%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-11 {
         flex: 1 88%;
+        max-width: 88%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-12 {
         flex: 1 96%;
+        max-width: 96%;
     }
 }
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-1, .Customized-UI.Grid.Container .Customized-UI.Grid.Item {
         flex: 1 8%;
+        max-width: 8%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-2 {
         flex: 1 16%;
+        max-width: 16%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-3 {
         flex: 1 24%;
+        max-width: 24%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-4 {
         flex: 1 32%;
+        max-width: 32%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-5 {
         flex: 1 40%;
+        max-width: 40%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-6 {
         flex: 1 48%;
+        max-width: 48%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-7 {
         flex: 1 56%;
+        max-width: 56%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-8 {
         flex: 1 64%;
+        max-width: 64%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-9 {
         flex: 1 72%;
+        max-width: 72%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-10 {
         flex: 1 80%;
+        max-width: 80%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-11 {
         flex: 1 88%;
+        max-width: 88%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-12 {
         flex: 1 96%;
+        max-width: 96%;
     }
 }
 
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-1, .Customized-UI.Grid.Container .Customized-UI.Grid.Item {
         flex: 1 8%;
+        max-width: 8%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-2 {
         flex: 1 16%;
+        max-width: 16%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-3 {
         flex: 1 24%;
+        max-width: 24%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-4 {
         flex: 1 32%;
+        max-width: 32%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-5 {
         flex: 1 40%;
+        max-width: 40%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-6 {
         flex: 1 48%;
+        max-width: 48%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-7 {
         flex: 1 56%;
+        max-width: 56%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-8 {
         flex: 1 64%;
+        max-width: 64%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-9 {
         flex: 1 72%;
+        max-width: 72%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-10 {
         flex: 1 80%;
+        max-width: 80%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-11 {
         flex: 1 88%;
+        max-width: 88%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-12 {
         flex: 1 96%;
+        max-width: 96%;
     }
 }
 
 @media only screen and (min-width: 1201px) {
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-1, .Customized-UI.Grid.Container .Customized-UI.Grid.Item {
         flex: 1 8%;
+        max-width: 8%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-2 {
         flex: 1 16%;
+        max-width: 16%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-3 {
         flex: 1 24%;
+        max-width: 24%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-4 {
         flex: 1 32%;
+        max-width: 32%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-5 {
         flex: 1 40%;
+        max-width: 40%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-6 {
         flex: 1 48%;
+        max-width: 48%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-7 {
         flex: 1 56%;
+        max-width: 56%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-8 {
         flex: 1 64%;
+        max-width: 64%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-9 {
         flex: 1 72%;
+        max-width: 72%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-10 {
         flex: 1 80%;
+        max-width: 80%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-11 {
         flex: 1 88%;
+        max-width: 88%;
     }
     .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-12 {
         flex: 1 96%;
+        max-width: 96%;
     }
 }

@@ -13,8 +13,9 @@ export const Image: FC<ImageProps> = ({ src, fluid, rounded, style, className, c
     if (rounded) {
         clsN.add("RoundedBorder")
     }
-    if(heightFit){
+    if (heightFit) {
         clsN.add("HeightFit")
+        styl.add({ maxHeight: heightFit })
     }
-    return (<img src={src} className={clsN.getName()} style={styl.getStyle()} height={heightFit ?? "auto"} />)
+    return (<img src={src} className={clsN.getName()} style={styl.getStyle()} />)
 }
