@@ -1,3 +1,4 @@
+import { GridItemColSize } from "../../Container/Grid/Grid.types";
 import { ArticleListPreviewProps } from "../ArticleListPreview/ArticleListPreview.types";
 
 export interface ArticleProps {
@@ -7,6 +8,11 @@ export interface ArticleProps {
     article?: ArticleParam
     option?: ArticleOption
     articleListPreviews?: ArticleListPreviewProps[]
+    articleListPreviewsOption?: ArticleListPreviewOptionProps
+}
+
+export interface ArticleListPreviewOptionProps {
+    colSize?: GridItemColSize
 }
 
 export interface ArticleParam {

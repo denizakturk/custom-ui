@@ -8,9 +8,9 @@ import { Styles } from '../../Styles'
 export const Footer: FC<FooterProps> = ({ children, style, styles, logo, brandName, slogan, dropShadow, className, classNames, widthLimit }: { children?: any, style?: any, styles?: FooterStylesProps, logo?: string, brandName?: string, slogan?: string, dropShadow?: boolean, className?: string, classNames?: string[], widthLimit?: string }) => {
     let clsN = new ClassNames(["Customized-UI", "Footer"])
     let styl = new Styles(style)
-    let stylLogoGridItem = new Styles({ textAlign: "center", marginTop: "0", marginLeft: "0" })
+    let stylLogoGridItem = new Styles({ textAlign: "center", marginTop: "0", marginLeft: "0", marginRight: "5px" })
     stylLogoGridItem.add(styles?.logoGridItem)
-    let stylBrandGridItem = new Styles({ textAlign: "center", margin: "0" })
+    let stylBrandGridItem = new Styles({ textAlign: "center", margin: "0", fontWeight: "bold" })
     stylBrandGridItem.add(styles?.brandGradItem)
     let stylSloganGridItem = new Styles({ textAlign: "center", margin: "0" })
     stylSloganGridItem.add(styles?.sloganGridItem)
@@ -25,10 +25,7 @@ export const Footer: FC<FooterProps> = ({ children, style, styles, logo, brandNa
             {children ??
                 <GridContainer widthLimit={widthLimit}>
                     {logo ? <GridItem col={12} style={stylLogoGridItem.getStyle()}>
-                        <Logo src={logo ?? ""} />
-                    </GridItem> : null}
-                    {brandName ? <GridItem col={12} style={stylBrandGridItem.getStyle()}>
-                        {brandName}
+                        <Logo src={logo ?? ""} /> <span style={stylBrandGridItem.getStyle()}>{brandName}</span>
                     </GridItem> : null}
                     {slogan ? <GridItem col={12} style={stylSloganGridItem.getStyle()}>
                         <Slogan align={"center"} style={stylSlogan.getStyle()}>{slogan}</Slogan>
