@@ -17,6 +17,8 @@ export interface ArticleListPreviewOptionProps {
 
 export interface ArticleParam {
     image?: string
+    imageAlt?: string
+    imageTitle?: string
     title?: string
     description?: string
     explanation?: string

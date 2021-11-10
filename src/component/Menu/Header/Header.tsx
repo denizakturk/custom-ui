@@ -11,7 +11,7 @@ import { SideMenuLinkGroups } from '../SideMenu/SideMenu.types'
 import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'
 
-export const Header: FC<HeaderProps> = ({ style, widthLimit, className, classNames, linkGroups, children, dropShadow, logo, slogan, fontFamily, brandName, styles }: { style?: any, widthLimit?: string, className?: string, classNames?: string[], children?: any, dropShadow?: boolean, logo?: string, slogan?: string, fontFamily?: string, brandName?: string, linkGroups?: SideMenuLinkGroups, styles?: HeaderStylesProps }) => {
+export const Header: FC<HeaderProps> = ({ style, widthLimit, className, classNames, linkGroups, children, dropShadow, logo, slogan, fontFamily, brandName, styles, logoLink }: { style?: any, widthLimit?: string, className?: string, classNames?: string[], children?: any, dropShadow?: boolean, logo?: string, slogan?: string, fontFamily?: string, brandName?: string, linkGroups?: SideMenuLinkGroups, styles?: HeaderStylesProps, logoLink?: string }) => {
   let clsN = new ClassNames(["Customized-UI", "Header"])
   let styl = new Styles(style)
   let stylLogoGridItem = new Styles({ textAlign: "center", margin: "0" })
@@ -33,15 +33,15 @@ export const Header: FC<HeaderProps> = ({ style, widthLimit, className, classNam
         <GridContainer style={{ padding: "0" }} widthLimit={widthLimit}>
           <GridItem col={12} hideAndUp={"sm"} style={stylLogoGridItem.getStyle()}>
             <TextHeader size="h5" style={stylTextHeader.getStyle()}>
-              <SideMenu linkGroups={linkGroups}/>
-              {logo ? <Logo src={logo ?? ""} /> : null}
+              <SideMenu linkGroups={linkGroups} />
+              {logo ? <Logo link={logoLink} src={logo ?? ""} /> : null}
               {brandName}
             </TextHeader>
           </GridItem>
           <GridItem col={6} hideAndDown={"sm"} style={{ margin: "0" }}>
             <TextHeader size="h5" style={stylTextHeader.getStyle()}>
-              <SideMenu linkGroups={linkGroups}/>
-              {logo ? <Logo src={logo ?? ""} /> : null}
+              <SideMenu linkGroups={linkGroups} />
+              {logo ? <Logo link={logoLink} src={logo ?? ""} /> : null}
               {brandName}
             </TextHeader>
           </GridItem>

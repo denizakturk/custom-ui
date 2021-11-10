@@ -13,6 +13,7 @@ export interface HeaderProps {
     styles?: HeaderStylesProps
     style?: any
     widthLimit?: string
+    logoLink?: string
 }
 
 export interface HeaderStylesProps {

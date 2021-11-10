@@ -3,6 +3,9 @@ export interface FooterProps {
     styles?: FooterStylesProps
     children?: any
     logo?: string
+    logoAlt?: string
+    logoTitle?: string
+    logoLink?: string
     slogan?: string
     dropShadow?: boolean
     brandName?: string

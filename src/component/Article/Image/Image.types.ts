@@ -6,4 +6,6 @@ export interface ImageProps {
     className?: string
     classnames?: string[]
     heightFit?: string
+    alt?: string
+    title?: string
 }

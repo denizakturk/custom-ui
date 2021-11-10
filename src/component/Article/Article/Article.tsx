@@ -22,13 +22,13 @@ export const Article: FC<ArticleProps> = ({ article, option, articleListPreviews
         <div style={styl.getStyle()}>
             <div className={clsNMainDiv.getName()}>
                 <div className={clsNImageDiv.getName()}>
-                    <Image src={article?.image} heightFit={option?.image?.maxHeight ?? ""} fluid={option?.image?.isFluid ?? false} rounded={option?.image?.isRounded ?? false} />
+                    <Image src={article?.image} alt={article?.imageAlt} title={article?.imageTitle} heightFit={option?.image?.maxHeight ?? ""} fluid={option?.image?.isFluid ?? false} rounded={option?.image?.isRounded ?? false} />
                 </div>
                 <div className={clsNContentDiv.getName()}>
                     <TextHeader size={"h4"}>{article?.title}</TextHeader>
-                    <Paragraph>{contentHelper.pageContent(article?.explanation ?? "")}</Paragraph>
-                    <Paragraph>{contentHelper.pageContent(article?.description ?? "")}</Paragraph>
-                    <Paragraph>{contentHelper.pageContent(article?.content ?? "")}</Paragraph>
+                    <Paragraph text={article?.explanation} />
+                    <Paragraph nl2br={true} text={article?.description} />
+                    <Paragraph nl2br={true} text={article?.content} />
                 </div>
             </div>
             <div className={clsNFooterDiv.getName()}>

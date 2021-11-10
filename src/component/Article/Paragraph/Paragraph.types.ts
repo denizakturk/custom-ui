@@ -4,4 +4,6 @@ export interface ParagraphProps {
     className?: string
     classNames?: string[]
     style?: any
+    text?: string
+    nl2br?: boolean
 }

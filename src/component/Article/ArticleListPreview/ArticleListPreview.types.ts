@@ -1,13 +1,15 @@
 export interface ArticleListPreviewProps {
     article: Article
-    articleOption: ArticleOption
+    articleOption?: ArticleOption
+    style?: any
 }
 
 export interface Article {
     image?: string
+    imageAlt?: string
+    imageTitle?: string
     title?: string
     description?: string
-    content?: string
     link?: string
 }
 
