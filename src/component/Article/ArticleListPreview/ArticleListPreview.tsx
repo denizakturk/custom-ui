@@ -6,7 +6,6 @@ import { Article, ArticleListPreviewProps, ArticleOption } from './ArticleListPr
 import { ClassNames } from '../../ClassNames'
 import './ArticleListPreview.css'
 import { Link } from '../../Menu/Link'
-import { ContentHelper } from '../../helper'
 import { Styles } from '../../Styles'
 export const ArticleListPreview: FC<ArticleListPreviewProps> = ({ article, articleOption, style }: { article: Article, articleOption?: ArticleOption, style?: any }) => {
     let styl = new Styles(style)
@@ -14,15 +13,16 @@ export const ArticleListPreview: FC<ArticleListPreviewProps> = ({ article, artic
     let clsNImageDiv = new ClassNames(["Customized-UI", "ArticleListPreview", "ImageContainer"])
     let clsNContentDiv = new ClassNames(["Customized-UI", "ArticleListPreview", "ContentContainer"])
     let clsNLinkContainer = new ClassNames(["Customized-UI", "ArticleListPreview", "LinkContainer"])
-    let contentHelper = new ContentHelper
     return (
         <div className={clsNMainDiv.getName()} style={styl.getStyle()}>
-            <div className={clsNImageDiv.getName()}>
-                <Image src={article.image} alt={article?.imageAlt} title={article?.title} heightFit={articleOption?.image?.maxHeight ?? ""} fluid={articleOption?.image?.isFluid ?? false} rounded={articleOption?.image?.isRounded ?? false} />
-            </div>
-            <div className={clsNContentDiv.getName()}>
-                <TextHeader size={"h4"}>{article?.title}</TextHeader>
-                <Paragraph nl2br={true} text={article?.description} />
+            <div className="Customized-UI ArticleListPreview BodyContainer">
+                <div className={clsNImageDiv.getName()}>
+                    <Image src={article.image} alt={article?.imageAlt} title={article?.title} heightFit={articleOption?.image?.maxHeight ?? ""} fluid={articleOption?.image?.isFluid ?? false} rounded={articleOption?.image?.isRounded ?? false} />
+                </div>
+                <div className={clsNContentDiv.getName()}>
+                    <TextHeader size={"h4"}>{article?.title}</TextHeader>
+                    <Paragraph nl2br={true} text={article?.description} />
+                </div>
             </div>
             {article?.link ?
                 <div className={clsNLinkContainer.getName()}>

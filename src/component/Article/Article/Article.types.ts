@@ -5,10 +5,23 @@ export interface ArticleProps {
     className?: string
     classNames?: string
     style?: any
+    styles?: ArticleStyles
     article?: ArticleParam
     option?: ArticleOption
     articleListPreviews?: ArticleListPreviewProps[]
     articleListPreviewsOption?: ArticleListPreviewOptionProps
+    tags?: ArticleTagProps[]
+}
+
+export interface ArticleTagProps {
+    link?: string
+    name?: string
+    slug?: string
+}
+
+export interface ArticleStyles {
+    listPreviewStyle?: any
+    listPreviewGridStyle?: any
 }
 
 export interface ArticleListPreviewOptionProps {

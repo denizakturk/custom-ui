@@ -21,3 +21,8 @@
     background-color: transparent;
     padding: 0;
 }
+
+.Customized-UI.Article.TagContainer {
+    background-color: transparent;
+    padding: 15px 0;
+}

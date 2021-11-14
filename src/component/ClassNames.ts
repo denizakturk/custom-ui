@@ -13,7 +13,7 @@ export class ClassNames {
 
     addMany = (names?: string[]): this => {
         if (names) {
-            names.map((val) => { this.add(val) })
+            names.map((val: string, index) => { this.add(val) })
         }
         return this
     }

@@ -1,0 +1,8 @@
+.Customized-UI.Tag {
+    margin-right: 15px;
+}
+
+.Customized-UI.Tag:Hover {
+    margin-right: 15px;
+    text-decoration: underline;
+}

@@ -9,7 +9,7 @@ export const Link: FC<LinkProps> = ({ href, children, icon, onClick, style, styl
     let styl = new Styles(style)
     styl.add(styles?.link)
     stylIcon.add(styles?.icon)
-    let clsN = new ClassNames()
+    let clsN = new ClassNames(["Customized-UI", "Link"])
     clsN.add(className).addMany(classNames)
     return (
         <a href={href} onClick={onClick} style={styl.getStyle()} className={clsN.getName()}>
