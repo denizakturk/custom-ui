@@ -7,8 +7,10 @@ import { ClassNames } from '../../ClassNames'
 import './ArticleListPreview.css'
 import { Link } from '../../Menu/Link'
 import { Styles } from '../../Styles'
+import { TemplateManager } from '../../template'
 export const ArticleListPreview: FC<ArticleListPreviewProps> = ({ article, articleOption, style }: { article: Article, articleOption?: ArticleOption, style?: any }) => {
-    let styl = new Styles(style)
+    let styl = new Styles(TemplateManager.getArticle())
+    styl.add(style)
     let clsNMainDiv = new ClassNames(["Customized-UI", "ArticleListPreview", "MainContainer"])
     let clsNImageDiv = new ClassNames(["Customized-UI", "ArticleListPreview", "ImageContainer"])
     let clsNContentDiv = new ClassNames(["Customized-UI", "ArticleListPreview", "ContentContainer"])

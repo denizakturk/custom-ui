@@ -4,7 +4,7 @@ import { GridContainer, GridItem } from '../../Container/Grid'
 import { FooterProps, FooterStylesProps } from './Footer.types'
 import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'
-
+import { TemplateManager } from '../../template'
 export const Footer: FC<FooterProps> = ({ children, style, styles, logo, brandName, slogan, dropShadow, className, classNames, widthLimit, logoAlt, logoTitle, logoLink }: { children?: any, style?: any, styles?: FooterStylesProps, logo?: string, brandName?: string, slogan?: string, dropShadow?: boolean, className?: string, classNames?: string[], widthLimit?: string, logoAlt?: string, logoTitle?: string, logoLink?: string }) => {
     let clsN = new ClassNames(["Customized-UI", "Footer"])
     let styl = new Styles(style)
@@ -14,7 +14,8 @@ export const Footer: FC<FooterProps> = ({ children, style, styles, logo, brandNa
     stylBrandGridItem.add(styles?.brandGradItem)
     let stylSloganGridItem = new Styles({ textAlign: "center", margin: "0" })
     stylSloganGridItem.add(styles?.sloganGridItem)
-    let stylSlogan = new Styles({ flexDirection: "column", textAlign: "center" })
+    let stylSlogan = new Styles(TemplateManager.getFooter())
+    stylSlogan.add({ flexDirection: "column", textAlign: "center" })
     stylSlogan.add(styles?.slogan)
     clsN.add(className).addMany(classNames)
     if (dropShadow) {

@@ -3,8 +3,10 @@ import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'
 import './Container.css'
 import { ContainerProps } from './Container.types'
+import { TemplateManager } from '../../template'
 export const Container: FC<ContainerProps> = ({ children, className, classNames, style }: { children?: any, className?: string, classNames?: string[], style?: any }) => {
-    let styl = new Styles(style)
+    let styl = new Styles(TemplateManager.getContainer())
+    styl.add(style)
     let clsN = new ClassNames(["Customized-UI", "Container"])
     clsN.add(className).addMany(classNames)
     return (

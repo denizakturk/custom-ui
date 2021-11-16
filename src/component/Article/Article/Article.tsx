@@ -10,14 +10,15 @@ import { ArticleListPreview } from '../ArticleListPreview'
 import './Article.css'
 import { Styles } from '../../Styles'
 import { Tag } from '../Tag'
-
+import { TemplateManager } from '../../template'
 export const Article: FC<ArticleProps> = ({ tags, article, option, articleListPreviews, style, articleListPreviewsOption, styles }: { tags?: ArticleTagProps[], article?: ArticleParam, option?: ArticleOption, articleListPreviews?: ArticleListPreviewProps[], articleListPreviewsOption?: ArticleListPreviewOptionProps, style?: any, styles?: ArticleStyles }) => {
     let clsNMainDiv = new ClassNames(["Customized-UI", "Article", "MainContainer"])
     let clsNImageDiv = new ClassNames(["Customized-UI", "Article", "ImageContainer"])
     let clsNContentDiv = new ClassNames(["Customized-UI", "Article", "ContentContainer"])
     let clsNFooterDiv = new ClassNames(["Customized-UI", "Article", "FooterContainer"])
     let clsNTagDiv = new ClassNames(["Customized-UI", "Article", "TagContainer"])
-    let styl = new Styles(style)
+    let styl = new Styles(TemplateManager.getArticle())
+    styl.add(style)
     let listPreviewGridStyl = new Styles(styles?.listPreviewGridStyle)
     let listPreviewStyl = new Styles({ position: "relative", height: "100%" })
     listPreviewStyl.add(styles?.listPreviewStyle)

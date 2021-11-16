@@ -3,9 +3,10 @@ import { TextHeaderProps } from "./TextHeader.types"
 import './TextHeader.css'
 import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'
-
+import { TemplateManager } from '../../template'
 export const TextHeader: FC<TextHeaderProps> = ({ size, text, children, style, className, classNames }: { size?: string, text?: string, children?: any, style?: any, className?: string, classNames?: string[] }) => {
-    let styl = new Styles(style)
+    let styl = new Styles(TemplateManager.getTextHeader())
+    styl.add(style)
     let clsN = new ClassNames(['Customized-UI']);
     clsN.add(className).addMany(classNames)
     return (
@@ -15,7 +16,7 @@ export const TextHeader: FC<TextHeaderProps> = ({ size, text, children, style, c
     )
 }
 
-function getHeaderTitleType(size?: string, text?: string, children?: any, style?: any, className?:string) {
+function getHeaderTitleType(size?: string, text?: string, children?: any, style?: any, className?: string) {
     if (!size) {
         size = 'h1'
     }

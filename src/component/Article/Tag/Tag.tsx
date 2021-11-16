@@ -4,6 +4,7 @@ import { TagProps } from "./Tag.types";
 import './Tag.css'
 import { Icon } from '../../Icon';
 import { ClassNames } from '../../ClassNames';
+import { Styles } from '../../Styles';
 
 export const Tag: FC<TagProps> = ({ className, classNames, style, link, name, slug }: { name?: string, slug?: string, className?: string, classNames?: string[], style?: any, link?: string }) => {
     let clsName = new ClassNames(["Tag"])

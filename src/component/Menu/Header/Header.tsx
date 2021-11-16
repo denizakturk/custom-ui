@@ -10,16 +10,24 @@ import { SideMenu } from './../SideMenu'
 import { SideMenuLinkGroups } from '../SideMenu/SideMenu.types'
 import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'
+import { TemplateManager } from '../../template'
 
 export const Header: FC<HeaderProps> = ({ style, widthLimit, className, classNames, linkGroups, children, dropShadow, logo, slogan, fontFamily, brandName, styles, logoLink }: { style?: any, widthLimit?: string, className?: string, classNames?: string[], children?: any, dropShadow?: boolean, logo?: string, slogan?: string, fontFamily?: string, brandName?: string, linkGroups?: SideMenuLinkGroups, styles?: HeaderStylesProps, logoLink?: string }) => {
   let clsN = new ClassNames(["Customized-UI", "Header"])
-  let styl = new Styles(style)
-  let stylLogoGridItem = new Styles({ textAlign: "center", margin: "0" })
-  let stylTextHeader = new Styles(styles?.brandName)
-  let stylSloganGridItem = new Styles({ textAlign: "right", verticalAlign: "middle", margin: "0" })
-  stylTextHeader.add(styles?.brandName)
+  let styl = new Styles(TemplateManager.getHeader())
+  styl.add(style)
+
+  let stylLogoGridItem = new Styles(TemplateManager.getGridItem())
+  stylLogoGridItem.add({ textAlign: "center", margin: "0" })
   stylLogoGridItem.add(styles?.logoGridItem)
+
+  let stylTextHeader = new Styles(TemplateManager.getTextHeader())
+  stylTextHeader.add(styles?.brandName)
+
+  let stylSloganGridItem = new Styles(TemplateManager.getGridItem())
+  stylSloganGridItem.add({ textAlign: "right", verticalAlign: "middle", margin: "0" })
   stylSloganGridItem.add(styles?.sloganGridItem)
+
   clsN.add(className).addMany(classNames)
   if (dropShadow) {
     clsN.add("BoxShadow")
