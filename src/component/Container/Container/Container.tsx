@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
-import { ClassNames } from '../../ClassNames'
-import { Styles } from '../../Styles'
 import './Container.css'
 import { ContainerProps } from './Container.types'
+import { ClassNames } from '../../ClassNames'
+import { Styles } from '../../Styles'
 import { TemplateManager } from '../../template'
 export const Container: FC<ContainerProps> = ({ children, className, classNames, style }: { children?: any, className?: string, classNames?: string[], style?: any }) => {
     let styl = new Styles(TemplateManager.getContainer())
