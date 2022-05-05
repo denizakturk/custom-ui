@@ -6,7 +6,7 @@ import { Styles } from '../Styles';
 import { TemplateManager } from '../template';
 var fontLoad: boolean = false
 
-export const Icon: FC<IconProps> = ({ name, color, size, style, onClick, className, classNames }: { name: string, color?: string, size?: number, style?: any, onClick?: any, className?: string, classNames?: string[] }) => {
+export const Icon: FC<IconProps> = ({ name, color, size, style, onClick, className, classNames, id }: { name: string, color?: string, size?: number, style?: any, onClick?: any, className?: string, classNames?: string[], id?: string }) => {
     let styl = new Styles(TemplateManager.getIcon())
     styl.add(style)
     let clsN = new ClassNames(["material-icons"])
@@ -22,7 +22,7 @@ export const Icon: FC<IconProps> = ({ name, color, size, style, onClick, classNa
         clsN.add("md-" + size)
     }
     return (
-        <span className={clsN.getName()} style={styl.getStyle()} onClick={onClick}>
+        <span className={clsN.getName()} style={styl.getStyle()} onClick={onClick} id={id ?? ""}>
             {name}
         </span>
     )

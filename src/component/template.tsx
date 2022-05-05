@@ -210,6 +210,21 @@ export class sideMenuStyle implements TemplateSideMenuProps {
     }
 }
 
+export class selectStyle implements TemplateSelectProps {
+    backgroundColor?: string | undefined = undefined
+    color?: string | undefined = undefined
+    fontSize?: string | undefined = undefined
+    fontWeight?: string | undefined = undefined
+    fontFamily?: string | undefined = undefined
+    constructor(styles?: TemplateSelectProps) {
+        this.backgroundColor = styles?.backgroundColor
+        this.color = styles?.color
+        this.fontSize = styles?.fontSize
+        this.fontWeight = styles?.fontWeight
+        this.fontFamily = styles?.fontFamily
+    }
+}
+
 export interface TemplateStylesProps {
     header?: TemplateHeaderProps | undefined
     footer?: TemplateFooterProps | undefined
@@ -227,6 +242,7 @@ export interface TemplateStylesProps {
     logo?: TemplateLogoProps | undefined
     link?: TemplateLinkProps | undefined
     sideMenu?: TemplateSideMenuProps | undefined
+    select?: TemplateSideMenuProps | undefined
 }
 
 export interface TemplateHeaderProps {
@@ -357,6 +373,14 @@ export interface GeneralProps {
     fontFamily?: string | undefined
 }
 
+export interface TemplateSelectProps {
+    backgroundColor?: string | undefined
+    color?: string | undefined
+    fontSize?: string | undefined
+    fontWeight?: string | undefined
+    fontFamily?: string | undefined
+}
+
 export interface TemplateProps {
     generalProps?: GeneralProps
     componentProps?: TemplateStylesProps | undefined
@@ -473,6 +497,12 @@ export class Template implements MainTemplateProps {
         } else if (this.styles?.textHeader) {
             this.styles.textHeader = new TextHeaderStyle(template.componentProps?.textHeader)
         }
+
+        if (!template?.componentProps?.select && this.styles?.select) {
+            this.styles.select = new selectStyle(template.generalProps)
+        } else if (this.styles?.select) {
+            this.styles.select = new selectStyle(template.componentProps?.select)
+        }
     }
     getContainer = () => { return this.styles?.container }
     getGridContainer = () => { return this.styles?.gridContainer }
@@ -490,6 +520,7 @@ export class Template implements MainTemplateProps {
     getSmall = () => { return this.styles?.small }
     getTag = () => { return this.styles?.tag }
     getTextHeader = () => { return this.styles?.textHeader }
+    getSelect = () => { return this.styles?.select }
     resetStyles = () => { this.styles = undefined }
 }
 

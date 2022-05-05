@@ -1,2 +1,5 @@
-# custom-ui
-React custom ui
+# Github: custom-ui
+# NPM: customized-ui
+React customized ui
+
+
