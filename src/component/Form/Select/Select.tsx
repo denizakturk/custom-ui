@@ -1,11 +1,11 @@
-import React, { FC, useRef } from 'react'
+import React, { FC } from 'react'
 import { SelectProps, SelectValueProps } from './Select.types'
 import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'
 import { TemplateManager } from '../../template'
 import './Select.css'
 import { Icon } from '../../Icon'
-export const Select: FC<SelectProps> = ({ name, values, placeholder, className, classNames, style, styles, selectedValue, isSearchable = false }: SelectProps) => {
+export const Select: FC<SelectProps> = ({ name, values, placeholder, className, classNames, style, styles, selectedValue, isSearchable = false }: {name?: string,placeholder?: string,className?: string,classNames?: string[],style?: any,styles?: any,selectedValue?: SelectValueProps,values: SelectValueProps[],isSearchable?: boolean}) => {
     let styl = new Styles(TemplateManager.getSelect())
     styl.add(style)
     let clsN = new ClassNames(["Customized-UI", "Select"])
