@@ -1,6 +1,6 @@
 {
   "name": "customized-ui",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "React custom ui",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
