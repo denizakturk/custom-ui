@@ -5,9 +5,9 @@ import { Styles } from '../../Styles'
 import { TemplateManager } from '../../template'
 import './Select.css'
 import { Icon } from '../../Icon'
-export const Select: FC<SelectProps> = ({ name, values, placeholder, className, classNames, style, styles, selectedValue, isSearchable = false }: {name?: string,placeholder?: string,className?: string,classNames?: string[],style?: any,styles?: any,selectedValue?: SelectValueProps,values: SelectValueProps[],isSearchable?: boolean}) => {
-    let styl = new Styles(TemplateManager.getSelect())
-    styl.add(style)
+export const Select: FC<SelectProps> = ({ name, values, placeholder, className, classNames, style, styles, selectedValue, isSearchable = false }: { name?: string, placeholder?: string, className?: string, classNames?: string[], style?: any, styles?: any, selectedValue?: SelectValueProps, values: SelectValueProps[], isSearchable?: boolean }) => {
+    let mainDivStyle = new Styles(TemplateManager.getSelect())
+    mainDivStyle.add(style)
     let clsN = new ClassNames(["Customized-UI", "Select"])
     clsN.add(className).addMany(classNames)
     let clsSearchInputDiv = new ClassNames(["Customized-UI", "Select-Search-Input-Div"])
@@ -47,10 +47,10 @@ export const Select: FC<SelectProps> = ({ name, values, placeholder, className, 
 
     return (
         <React.Fragment>
-            <div className={clsN.getName()} id="Customized-UI-Select-Area">
+            <div className={clsN.getName()} id="Customized-UI-Select-Area" style={mainDivStyle.getStyle()}>
                 <input id="Customized-UI-Select-Value" type="hidden" value={selectedValue?.id} name={name ?? "select-value"} />
                 <div className={clsSearchInputDiv.getName()}>
-                    <input type="text" id="Customized-UI-Select-Search-Input" className={clsSearchInput.getName()} readOnly={!isSearchable} value={selectedValue?.name} style={{ verticalAlign: "middle" }} />
+                    <input type="text" placeholder={placeholder ?? ""} id="Customized-UI-Select-Search-Input" className={clsSearchInput.getName()} readOnly={!isSearchable} value={selectedValue?.name} style={{ verticalAlign: "middle" }} />
                     <Icon id="Customized-UI-Select-Dropdown-Icon" name='expand_more' className={clsDropdownButton.getName()} onClick={toggleDropdownShow} style={{ verticalAlign: "middle" }} />
                 </div>
                 <div id="Customized-UI-Select-Dropdown-List" className={clsDropdownList.getName()}>
