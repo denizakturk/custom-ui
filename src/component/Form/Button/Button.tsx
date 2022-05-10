@@ -3,8 +3,10 @@ import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'
 import { ButtonProps } from './Button.types'
 import './Button.css'
+import { TemplateManager } from '../../template'
 export const Button: FC<ButtonProps> = ({ children, label, style, className, classNames, type }: { children?: any, label?: string, style?: any, className?: string, classNames?: string[], type?: "button" | "submit" | "reset" }) => {
-    let btnStyle = new Styles(style)
+    let btnStyle = new Styles(TemplateManager.getButton())
+    btnStyle.add(style)
     let clsName = new ClassNames(["Customized-UI", "Button"])
     clsName.add(className)
     clsName.addMany(classNames)

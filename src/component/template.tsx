@@ -1,389 +1,9 @@
+import { ArticleStyle, ButtonStyle, ContainerStyle, FooterStyle, FormStyle, GridContainerStyle, GridItemStyle, HeaderStyle, IconStyle, ImageStyle, LinkStyle, LogoStyle, ParagraphStyle, SelectStyle, SideMenuStyle, SloganStyle, SmallStyle, TagStyle, TextHeaderStyle } from "./template.classes"
+import { TemplateProps, TemplateStylesProps } from "./template.types"
+
 export interface MainTemplateProps {
     setTheme: (template: TemplateProps) => void
     resetStyles: () => void
-}
-
-export class HeaderStyle implements TemplateHeaderProps {
-    //boxShadow?: string | undefined = undefined
-    backgroundColor?: string | undefined = undefined
-    color?: string | undefined = undefined
-    fontFamily?: string | undefined = undefined
-    constructor(styles?: TemplateHeaderProps) {
-        //this.boxShadow = styles?.boxShadow
-        this.backgroundColor = styles?.backgroundColor
-        this.color = styles?.color
-        this.fontFamily = styles?.fontFamily
-    }
-}
-
-export class FooterStyle implements TemplateFooterProps {
-    backgroundColor?: string | undefined = undefined
-    color?: string | undefined = undefined
-    fontSize?: string | undefined = undefined
-    fontWeight?: string | undefined = undefined
-    fontFamily?: string | undefined = undefined
-    constructor(styles?: TemplateFooterProps) {
-        this.backgroundColor = styles?.backgroundColor
-        this.color = styles?.color
-        this.fontSize = styles?.fontSize
-        this.fontWeight = styles?.fontWeight
-        this.fontFamily = styles?.fontFamily
-    }
-}
-
-export class TextHeaderStyle implements TemplateTextHeaderProps {
-    color?: string | undefined = undefined
-    fontSize?: string | undefined = undefined
-    fontWeight?: string | undefined = undefined
-    fontFamily?: string | undefined = undefined
-    constructor(styles?: TemplateTextHeaderProps) {
-        this.color = styles?.color
-        this.fontSize = styles?.fontSize
-        this.fontWeight = styles?.fontWeight
-        this.fontFamily = styles?.fontFamily
-    }
-}
-
-export class SloganStyle implements TemplateSloganProps {
-    color?: string | undefined = undefined
-    fontSize?: string | undefined = undefined
-    fontWeight?: string | undefined = undefined
-    fontFamily?: string | undefined = undefined
-    constructor(styles?: TemplateSloganProps) {
-        this.color = styles?.color
-        this.fontSize = styles?.fontSize
-        this.fontWeight = styles?.fontWeight
-        this.fontFamily = styles?.fontFamily
-    }
-}
-
-export class IconStyle implements TemplateIconProps {
-    color?: string | undefined = undefined
-    fontSize?: string | undefined = undefined
-    fontWeight?: string | undefined = undefined
-    constructor(styles?: TemplateIconProps) {
-        this.color = styles?.color
-        this.fontSize = styles?.fontSize
-        this.fontWeight = styles?.fontWeight
-    }
-}
-
-export class ArticleStyle implements TemplateArticleProps {
-    backgroundColor?: string | undefined = undefined
-    color?: string | undefined = undefined
-    fontSize?: string | undefined = undefined
-    fontWeight?: string | undefined = undefined
-    fontFamily?: string | undefined = undefined
-    constructor(styles?: TemplateArticleProps) {
-        this.backgroundColor = styles?.backgroundColor
-        this.color = styles?.color
-        this.fontSize = styles?.fontSize
-        this.fontWeight = styles?.fontWeight
-        this.fontFamily = styles?.fontFamily
-    }
-}
-
-export class ImageStyle implements TemplateImageProps {
-}
-
-export class ParagraphStyle implements TemplateParagraphProps {
-    color?: string | undefined = undefined
-    fontSize?: string | undefined = undefined
-    fontWeight?: string | undefined = undefined
-    fontFamily?: string | undefined = undefined
-    constructor(styles?: TemplateParagraphProps) {
-        this.color = styles?.color
-        this.fontSize = styles?.fontSize
-        this.fontWeight = styles?.fontWeight
-        this.fontFamily = styles?.fontFamily
-    }
-}
-
-export class SmallStyle implements TemplateSmallProps {
-    color?: string | undefined = undefined
-    fontSize?: string | undefined = undefined
-    fontWeight?: string | undefined = undefined
-    fontFamily?: string | undefined = undefined
-    constructor(styles?: TemplateSmallProps) {
-        this.color = styles?.color
-        this.fontSize = styles?.fontSize
-        this.fontWeight = styles?.fontWeight
-        this.fontFamily = styles?.fontFamily
-    }
-}
-
-export class TagStyle implements TemplateTagProps {
-    color?: string | undefined = undefined
-    fontSize?: string | undefined = undefined
-    fontWeight?: string | undefined = undefined
-    fontFamily?: string | undefined = undefined
-    constructor(styles?: TemplateTagProps) {
-        this.color = styles?.color
-        this.fontSize = styles?.fontSize
-        this.fontWeight = styles?.fontWeight
-        this.fontFamily = styles?.fontFamily
-    }
-}
-
-export class ContainerStyle implements TemplateContainerProps {
-    backgroundColor?: string | undefined = undefined
-    color?: string | undefined = undefined
-    fontSize?: string | undefined = undefined
-    fontWeight?: string | undefined = undefined
-    fontFamily?: string | undefined = undefined
-    constructor(styles?: TemplateContainerProps) {
-        this.backgroundColor = styles?.backgroundColor
-        this.color = styles?.color
-        this.fontSize = styles?.fontSize
-        this.fontWeight = styles?.fontWeight
-        this.fontFamily = styles?.fontFamily
-    }
-}
-
-export class GridItemStyle implements TemplateGridItemProps {
-    backgroundColor?: string | undefined = undefined
-    color?: string | undefined = undefined
-    fontSize?: string | undefined = undefined
-    fontWeight?: string | undefined = undefined
-    fontFamily?: string | undefined = undefined
-    constructor(styles?: TemplateGridItemProps) {
-        this.backgroundColor = styles?.backgroundColor
-        this.color = styles?.color
-        this.fontSize = styles?.fontSize
-        this.fontWeight = styles?.fontWeight
-        this.fontFamily = styles?.fontFamily
-    }
-}
-
-export class GridContainerStyle implements TemplateGridContainerProps {
-    backgroundColor?: string | undefined = undefined
-    color?: string | undefined = undefined
-    fontSize?: string | undefined = undefined
-    fontWeight?: string | undefined = undefined
-    fontFamily?: string | undefined = undefined
-    constructor(styles?: TemplateGridContainerProps) {
-        this.backgroundColor = styles?.backgroundColor
-        this.color = styles?.color
-        this.fontSize = styles?.fontSize
-        this.fontWeight = styles?.fontWeight
-        this.fontFamily = styles?.fontFamily
-    }
-}
-
-export class LogoStyle implements TemplateLogoProps {
-    color?: string | undefined = undefined
-    fontSize?: string | undefined = undefined
-    fontWeight?: string | undefined = undefined
-    fontFamily?: string | undefined = undefined
-    constructor(styles?: TemplateLogoProps) {
-        this.color = styles?.color
-        this.fontSize = styles?.fontSize
-        this.fontWeight = styles?.fontWeight
-        this.fontFamily = styles?.fontFamily
-    }
-}
-
-export class LinkStyle implements TemplateLinkProps {
-    color?: string | undefined = undefined
-    fontSize?: string | undefined = undefined
-    fontWeight?: string | undefined = undefined
-    fontFamily?: string | undefined = undefined
-    constructor(styles?: TemplateLinkProps) {
-        this.color = styles?.color
-        this.fontSize = styles?.fontSize
-        this.fontWeight = styles?.fontWeight
-        this.fontFamily = styles?.fontFamily
-    }
-}
-export class sideMenuStyle implements TemplateSideMenuProps {
-    backgroundColor?: string | undefined = undefined
-    color?: string | undefined = undefined
-    fontSize?: string | undefined = undefined
-    fontWeight?: string | undefined = undefined
-    fontFamily?: string | undefined = undefined
-    constructor(styles?: TemplateSideMenuProps) {
-        this.backgroundColor = styles?.backgroundColor
-        this.color = styles?.color
-        this.fontSize = styles?.fontSize
-        this.fontWeight = styles?.fontWeight
-        this.fontFamily = styles?.fontFamily
-    }
-}
-
-export class selectStyle implements TemplateSelectProps {
-    backgroundColor?: string | undefined = undefined
-    color?: string | undefined = undefined
-    fontSize?: string | undefined = undefined
-    fontWeight?: string | undefined = undefined
-    fontFamily?: string | undefined = undefined
-    constructor(styles?: TemplateSelectProps) {
-        this.backgroundColor = styles?.backgroundColor
-        this.color = styles?.color
-        this.fontSize = styles?.fontSize
-        this.fontWeight = styles?.fontWeight
-        this.fontFamily = styles?.fontFamily
-    }
-}
-
-export interface TemplateStylesProps {
-    header?: TemplateHeaderProps | undefined
-    footer?: TemplateFooterProps | undefined
-    textHeader?: TemplateTextHeaderProps | undefined
-    slogan?: TemplateSloganProps | undefined
-    icon?: TemplateIconProps | undefined
-    article?: TemplateArticleProps | undefined
-    image?: TemplateImageProps | undefined
-    paragraph?: TemplateParagraphProps | undefined
-    small?: TemplateSmallProps | undefined
-    tag?: TemplateTagProps | undefined
-    container?: TemplateContainerProps | undefined
-    gridContainer?: TemplateGridContainerProps | undefined
-    gridItem?: TemplateGridItemProps | undefined
-    logo?: TemplateLogoProps | undefined
-    link?: TemplateLinkProps | undefined
-    sideMenu?: TemplateSideMenuProps | undefined
-    select?: TemplateSideMenuProps | undefined
-}
-
-export interface TemplateHeaderProps {
-    //boxShadow?: string | undefined
-    backgroundColor?: string | undefined
-    color?: string | undefined
-    fontFamily?: string | undefined
-}
-
-export interface TemplateFooterProps {
-    backgroundColor?: string | undefined
-    color?: string | undefined
-    fontSize?: string | undefined
-    fontWeight?: string | undefined
-    fontFamily?: string | undefined
-}
-
-export interface TemplateTextHeaderProps {
-    color?: string | undefined
-    fontSize?: string | undefined
-    fontWeight?: string | undefined
-    fontFamily?: string | undefined
-}
-
-export interface TemplateSloganProps {
-    color?: string | undefined
-    fontSize?: string | undefined
-    fontWeight?: string | undefined
-    fontFamily?: string | undefined
-}
-
-export interface TemplateIconProps {
-    color?: string | undefined
-    fontSize?: string | undefined
-    fontWeight?: string | undefined
-}
-
-export interface TemplateArticleProps {
-    backgroundColor?: string | undefined
-    color?: string | undefined
-    fontSize?: string | undefined
-    fontWeight?: string | undefined
-    fontFamily?: string | undefined
-}
-
-export interface TemplateImageProps {
-
-}
-
-export interface TemplateParagraphProps {
-    color?: string | undefined
-    fontSize?: string | undefined
-    fontWeight?: string | undefined
-    fontFamily?: string | undefined
-}
-
-export interface TemplateSmallProps {
-    color?: string | undefined
-    fontSize?: string | undefined
-    fontWeight?: string | undefined
-    fontFamily?: string | undefined
-}
-
-export interface TemplateTagProps {
-    color?: string | undefined
-    fontSize?: string | undefined
-    fontWeight?: string | undefined
-    fontFamily?: string | undefined
-}
-
-export interface TemplateContainerProps {
-    backgroundColor?: string | undefined
-    color?: string | undefined
-    fontSize?: string | undefined
-    fontWeight?: string | undefined
-    fontFamily?: string | undefined
-}
-
-
-export interface TemplateGridContainerProps {
-    backgroundColor?: string | undefined
-    color?: string | undefined
-    fontSize?: string | undefined
-    fontWeight?: string | undefined
-    fontFamily?: string | undefined
-}
-
-export interface TemplateGridItemProps {
-    backgroundColor?: string
-    color?: string | undefined
-    fontSize?: string | undefined
-    fontWeight?: string | undefined
-    fontFamily?: string | undefined
-}
-
-export interface TemplateLogoProps {
-    color?: string | undefined
-    fontSize?: string | undefined
-    fontWeight?: string | undefined
-    fontFamily?: string | undefined
-}
-
-export interface TemplateLinkProps {
-    color?: string | undefined
-    fontSize?: string | undefined
-    fontWeight?: string | undefined
-    fontFamily?: string | undefined
-}
-
-export interface TemplateSideMenuProps {
-    backgroundColor?: string | undefined
-    color?: string | undefined
-    fontSize?: string | undefined
-    fontWeight?: string | undefined
-    fontFamily?: string | undefined
-}
-
-export interface GeneralProps {
-    backgroundColor?: string | undefined
-    color?: string | undefined
-    borderColor?: string | undefined
-    borderWidth?: string | undefined
-    //boxShadow?: string | undefined
-    borderBottom?: string | undefined
-    borderTop?: string | undefined
-    fontSize?: string | undefined
-    fontWeight?: string | undefined
-    fontFamily?: string | undefined
-}
-
-export interface TemplateSelectProps {
-    backgroundColor?: string | undefined
-    color?: string | undefined
-    fontSize?: string | undefined
-    fontWeight?: string | undefined
-    fontFamily?: string | undefined
-}
-
-export interface TemplateProps {
-    generalProps?: GeneralProps
-    componentProps?: TemplateStylesProps | undefined
 }
 
 export class Template implements MainTemplateProps {
@@ -407,9 +27,12 @@ export class Template implements MainTemplateProps {
         gridItem: new GridItemStyle,
         link: new LinkStyle,
         logo: new LogoStyle,
-        sideMenu: new sideMenuStyle,
+        sideMenu: new SideMenuStyle,
         small: new SmallStyle,
-        tag: new TagStyle
+        tag: new TagStyle,
+        select: new SelectStyle,
+        form: new FormStyle,
+        button: new ButtonStyle
     }
 
     setTheme = (template: TemplateProps): void => {
@@ -475,9 +98,9 @@ export class Template implements MainTemplateProps {
         }
 
         if (!template?.componentProps?.sideMenu && this.styles?.sideMenu) {
-            this.styles.sideMenu = new sideMenuStyle(template.generalProps)
+            this.styles.sideMenu = new SideMenuStyle(template.generalProps)
         } else if (this.styles?.sideMenu) {
-            this.styles.sideMenu = new sideMenuStyle(template.componentProps?.sideMenu)
+            this.styles.sideMenu = new SideMenuStyle(template.componentProps?.sideMenu)
         }
 
         if (!template?.componentProps?.slogan && this.styles?.slogan) {
@@ -499,9 +122,21 @@ export class Template implements MainTemplateProps {
         }
 
         if (!template?.componentProps?.select && this.styles?.select) {
-            this.styles.select = new selectStyle(template.generalProps)
+            this.styles.select = new SelectStyle(template.generalProps)
         } else if (this.styles?.select) {
-            this.styles.select = new selectStyle(template.componentProps?.select)
+            this.styles.select = new SelectStyle(template.componentProps?.select)
+        }
+
+        if (!template?.componentProps?.form && this.styles?.form) {
+            this.styles.form = new FormStyle(template.generalProps)
+        } else if (this.styles?.form) {
+            this.styles.form = new FormStyle(template.componentProps?.form)
+        }
+
+        if (!template?.componentProps?.button && this.styles?.button) {
+            this.styles.button = new ButtonStyle(template.generalProps)
+        } else if (this.styles?.button) {
+            this.styles.button = new ButtonStyle(template.componentProps?.button)
         }
     }
     getContainer = () => { return this.styles?.container }
@@ -521,6 +156,8 @@ export class Template implements MainTemplateProps {
     getTag = () => { return this.styles?.tag }
     getTextHeader = () => { return this.styles?.textHeader }
     getSelect = () => { return this.styles?.select }
+    getForm = () => { return this.styles?.form }
+    getButton = () => { return this.styles?.form }
     resetStyles = () => { this.styles = undefined }
 }
 
