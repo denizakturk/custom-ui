@@ -19,6 +19,8 @@ export interface TemplateStylesProps {
     select?: TemplateSideMenuProps | undefined
     form?: TemplateFormProps | undefined
     button?: TemplateButtonProps | undefined
+    input?: TemplateInputProps | undefined
+    textArea?: TemplateTextAreaProps | undefined
 }
 
 export interface TemplateHeaderProps {
@@ -173,6 +175,21 @@ export interface TemplateButtonProps {
     fontFamily?: string | undefined
 }
 
+export interface TemplateInputProps {
+    backgroundColor?: string | undefined
+    color?: string | undefined
+    fontSize?: string | undefined
+    fontWeight?: string | undefined
+    fontFamily?: string | undefined
+}
+
+export interface TemplateTextAreaProps {
+    backgroundColor?: string | undefined
+    color?: string | undefined
+    fontSize?: string | undefined
+    fontWeight?: string | undefined
+    fontFamily?: string | undefined
+}
 
 export interface TemplateProps {
     generalProps?: GeneralProps

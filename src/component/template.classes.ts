@@ -1,4 +1,4 @@
-import { TemplateArticleProps, TemplateButtonProps, TemplateContainerProps, TemplateFooterProps, TemplateFormProps, TemplateGridContainerProps, TemplateGridItemProps, TemplateHeaderProps, TemplateIconProps, TemplateImageProps, TemplateLinkProps, TemplateLogoProps, TemplateParagraphProps, TemplateSelectProps, TemplateSideMenuProps, TemplateSloganProps, TemplateSmallProps, TemplateTagProps, TemplateTextHeaderProps } from "./template.types"
+import { TemplateArticleProps, TemplateButtonProps, TemplateContainerProps, TemplateFooterProps, TemplateFormProps, TemplateGridContainerProps, TemplateGridItemProps, TemplateHeaderProps, TemplateIconProps, TemplateImageProps, TemplateInputProps, TemplateLinkProps, TemplateLogoProps, TemplateParagraphProps, TemplateSelectProps, TemplateSideMenuProps, TemplateSloganProps, TemplateSmallProps, TemplateTagProps, TemplateTextAreaProps, TemplateTextHeaderProps } from "./template.types"
 
 export class HeaderStyle implements TemplateHeaderProps {
     //boxShadow?: string | undefined = undefined
@@ -238,6 +238,36 @@ export class FormStyle implements TemplateFormProps {
 }
 
 export class ButtonStyle implements TemplateButtonProps {
+    backgroundColor?: string | undefined = undefined
+    color?: string | undefined = undefined
+    fontSize?: string | undefined = undefined
+    fontWeight?: string | undefined = undefined
+    fontFamily?: string | undefined = undefined
+    constructor(styles?: TemplateButtonProps) {
+        this.backgroundColor = styles?.backgroundColor
+        this.color = styles?.color
+        this.fontSize = styles?.fontSize
+        this.fontWeight = styles?.fontWeight
+        this.fontFamily = styles?.fontFamily
+    }
+}
+
+export class InputStyle implements TemplateInputProps {
+    backgroundColor?: string | undefined = undefined
+    color?: string | undefined = undefined
+    fontSize?: string | undefined = undefined
+    fontWeight?: string | undefined = undefined
+    fontFamily?: string | undefined = undefined
+    constructor(styles?: TemplateButtonProps) {
+        this.backgroundColor = styles?.backgroundColor
+        this.color = styles?.color
+        this.fontSize = styles?.fontSize
+        this.fontWeight = styles?.fontWeight
+        this.fontFamily = styles?.fontFamily
+    }
+}
+
+export class TextAreaStyle implements TemplateTextAreaProps {
     backgroundColor?: string | undefined = undefined
     color?: string | undefined = undefined
     fontSize?: string | undefined = undefined

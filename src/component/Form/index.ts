@@ -1,3 +1,5 @@
-export {Select} from './Select'
-export {Button} from './Button'
-export {Form} from './Form'
+export { Select } from './Select'
+export { Button } from './Button'
+export { Input } from './Input'
+export { TextArea } from './TextArea'
+export { Form } from './Form'

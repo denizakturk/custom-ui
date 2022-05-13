@@ -10,6 +10,7 @@ export class Styles {
         if (style) {
             this.styles = { ...this.styles, ...style }
         }
+        return this
     }
 
     getStyle = (): CSSProperties => {

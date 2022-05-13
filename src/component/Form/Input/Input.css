@@ -1,0 +1,11 @@
+.Customized-UI.Input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+
+.Customized-UI.Input:focus {
+    outline: none;
+}

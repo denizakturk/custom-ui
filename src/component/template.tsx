@@ -1,4 +1,4 @@
-import { ArticleStyle, ButtonStyle, ContainerStyle, FooterStyle, FormStyle, GridContainerStyle, GridItemStyle, HeaderStyle, IconStyle, ImageStyle, LinkStyle, LogoStyle, ParagraphStyle, SelectStyle, SideMenuStyle, SloganStyle, SmallStyle, TagStyle, TextHeaderStyle } from "./template.classes"
+import { ArticleStyle, ButtonStyle, ContainerStyle, FooterStyle, FormStyle, GridContainerStyle, GridItemStyle, HeaderStyle, IconStyle, ImageStyle, InputStyle, LinkStyle, LogoStyle, ParagraphStyle, SelectStyle, SideMenuStyle, SloganStyle, SmallStyle, TagStyle, TextAreaStyle, TextHeaderStyle } from "./template.classes"
 import { TemplateProps, TemplateStylesProps } from "./template.types"
 
 export interface MainTemplateProps {
@@ -32,7 +32,9 @@ export class Template implements MainTemplateProps {
         tag: new TagStyle,
         select: new SelectStyle,
         form: new FormStyle,
-        button: new ButtonStyle
+        button: new ButtonStyle,
+        input: new InputStyle,
+        textArea: new TextAreaStyle,
     }
 
     setTheme = (template: TemplateProps): void => {
@@ -138,6 +140,18 @@ export class Template implements MainTemplateProps {
         } else if (this.styles?.button) {
             this.styles.button = new ButtonStyle(template.componentProps?.button)
         }
+
+        if (!template?.componentProps?.input && this.styles?.input) {
+            this.styles.input = new InputStyle(template.generalProps)
+        } else if (this.styles?.input) {
+            this.styles.input = new InputStyle(template.componentProps?.input)
+        }
+
+        if (!template?.componentProps?.textArea && this.styles?.textArea) {
+            this.styles.textArea = new TextAreaStyle(template.generalProps)
+        } else if (this.styles?.textArea) {
+            this.styles.textArea = new TextAreaStyle(template.componentProps?.textArea)
+        }
     }
     getContainer = () => { return this.styles?.container }
     getGridContainer = () => { return this.styles?.gridContainer }
@@ -158,6 +172,8 @@ export class Template implements MainTemplateProps {
     getSelect = () => { return this.styles?.select }
     getForm = () => { return this.styles?.form }
     getButton = () => { return this.styles?.form }
+    getInput = () => { return this.styles?.input }
+    getTextArea = () => { return this.styles?.textArea }
     resetStyles = () => { this.styles = undefined }
 }
 
