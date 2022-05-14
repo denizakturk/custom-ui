@@ -1,5 +1,5 @@
 export interface SelectProps {
-    name?:string
+    name?: string
     placeholder?: string
     className?: string
     classNames?: string[]
@@ -7,7 +7,8 @@ export interface SelectProps {
     styles?: any
     selectedValue?: SelectValueProps
     values: SelectValueProps[]
-    isSearchable?:boolean
+    isSearchable?: boolean
+    onChange?: (selectedValue: any) => any
 }
 
 export interface SelectValueProps {

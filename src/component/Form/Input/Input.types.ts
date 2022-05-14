@@ -1,7 +1,7 @@
-import { HTMLInputTypeAttribute } from "react"
+import { ChangeEvent, HTMLInputTypeAttribute } from "react"
 
 export interface InputProps {
-    defaultValue?: string
+    defaultValue?: any
     name?: string
     type?: HTMLInputTypeAttribute | undefined
     style?: any
@@ -9,4 +9,5 @@ export interface InputProps {
     className?: string
     classNames?: string[]
     value?: any
+    onChange?: (changeEvent: ChangeEvent) => any
 }

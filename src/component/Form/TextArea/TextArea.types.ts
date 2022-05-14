@@ -1,4 +1,4 @@
-import { HTMLInputTypeAttribute } from "react"
+import { ChangeEvent, HTMLInputTypeAttribute } from "react"
 
 export interface TextAreaProps {
     style?: any
@@ -11,4 +11,5 @@ export interface TextAreaProps {
     readOnly?: boolean
     name?: string
     resize?: boolean
+    onChange?: (changeEvent: ChangeEvent) => any
 }
