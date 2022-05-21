@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { FontsProps } from './Fonts.types'
-export const Fonts: FC<FontsProps> = ({ href }: { href?: string }) => {
+export const Fonts: FC<FontsProps> = ({ href }: FontsProps) => {
     if (typeof window !== "undefined") {
         let styleSheetLink = document.createElement("link");
         let fontsGoogleApiLink = document.createElement("link");

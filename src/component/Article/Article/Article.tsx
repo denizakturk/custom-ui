@@ -1,27 +1,31 @@
 import React, { FC } from 'react'
-import { ArticleListPreviewOptionProps, ArticleOption, ArticleParam, ArticleProps, ArticleStyles, ArticleTagProps } from "./Article.types"
+import {ArticleProps, ArticleTagProps } from "./Article.types"
 import { ClassNames } from '../../ClassNames'
 import { Paragraph } from '../Paragraph'
 import { TextHeader } from '../TextHeader'
 import { Image } from '../Image'
-import { ArticleListPreviewProps } from '../ArticleListPreview/ArticleListPreview.types'
 import { GridContainer, GridItem } from '../../Container/Grid'
 import { ArticleListPreview } from '../ArticleListPreview'
-import './Article.css'
 import { Styles } from '../../Styles'
 import { Tag } from '../Tag'
 import { TemplateManager } from '../../template'
-export const Article: FC<ArticleProps> = ({ tags, article, option, articleListPreviews, style, articleListPreviewsOption, styles }: { tags?: ArticleTagProps[], article?: ArticleParam, option?: ArticleOption, articleListPreviews?: ArticleListPreviewProps[], articleListPreviewsOption?: ArticleListPreviewOptionProps, style?: any, styles?: ArticleStyles }) => {
+
+import './Article.css'
+
+export const Article: FC<ArticleProps> = ({ tags, article, option, articleListPreviews, style, articleListPreviewsOption, styles }: ArticleProps) => {
     let clsNMainDiv = new ClassNames(["Customized-UI", "Article", "MainContainer"])
     let clsNImageDiv = new ClassNames(["Customized-UI", "Article", "ImageContainer"])
     let clsNContentDiv = new ClassNames(["Customized-UI", "Article", "ContentContainer"])
     let clsNFooterDiv = new ClassNames(["Customized-UI", "Article", "FooterContainer"])
     let clsNTagDiv = new ClassNames(["Customized-UI", "Article", "TagContainer"])
-    let styl = new Styles(TemplateManager.getArticle())
-    styl.add(style)
+
     let listPreviewGridStyl = new Styles(styles?.listPreviewGridStyle)
     let listPreviewStyl = new Styles({ position: "relative", height: "100%" })
     listPreviewStyl.add(styles?.listPreviewStyle)
+
+    let styl = new Styles(TemplateManager.getArticle())
+    styl.add(style)
+
     return (
         <div style={styl.getStyle()}>
             <div className={clsNMainDiv.getName()}>

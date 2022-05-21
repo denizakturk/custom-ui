@@ -5,7 +5,7 @@ import { Styles } from '../../Styles'
 import { TemplateManager } from '../../template'
 import './Select.css'
 import { Icon } from '../../Icon'
-export const Select: FC<SelectProps> = ({ name, values, placeholder, className, classNames, style, styles, selectedValue, isSearchable = false, onChange }: SelectProps) => {
+export const Select: FC<SelectProps> = ({ name, values, placeholder, className, classNames, style, selectedValue, isSearchable = false, onChange }: SelectProps) => {
     let mainDivStyle = new Styles(TemplateManager.getSelect())
     let dropDownListDivStyle = new Styles(TemplateManager.getSelect())
     let dropdownIconStyle = new Styles(TemplateManager.getSelect())

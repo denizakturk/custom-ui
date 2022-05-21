@@ -1,10 +1,9 @@
-export interface ImageProps {
+import { StylesProps } from "../../../types.types"
+
+export interface ImageProps extends StylesProps {
     src?: string
     fluid?: boolean
     rounded?: boolean
-    style?: any
-    className?: string
-    classnames?: string[]
     heightFit?: string
     alt?: string
     title?: string

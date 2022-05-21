@@ -3,7 +3,7 @@ import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'
 import { SmallProps } from './Small.types'
 import { TemplateManager } from '../../template'
-export const Small: FC<SmallProps> = ({ children, className, classNames, style }: { children?: any, className?: string, classNames?: string[], style?: any }) => {
+export const Small: FC<SmallProps> = ({ children, className, classNames, style }: SmallProps) => {
     let styl = new Styles(TemplateManager.getSmall())
     styl.add(style)
     let clsN = new ClassNames();

@@ -8,11 +8,11 @@ import { GridContainer, GridItem } from '../../Container/Grid';
 import { ClassNames } from '../../ClassNames';
 import { Styles } from '../../Styles';
 import { TemplateManager } from '../../template';
-export const SideMenu: FC<SideMenuProps> = ({ children, linkGroups, style, styles, classNameBtn, classNamesBtn, classNameSideMenu, classNamesSideMenu, classNameOverlay, classNamesOverlay, openMenuIconName }: { children?: any, linkGroups?: SideMenuLinkGroups, style?: any, styles?: SideMenuStylesProps, classNameBtn?: string, classNamesBtn?: string[], classNameSideMenu?: string, classNamesSideMenu?: string[], classNameOverlay?: string, classNamesOverlay?: string[], openMenuIconName?: string }) => {
+export const SideMenu: FC<SideMenuProps> = ({ children, linkGroups, style, styles, classNameBtn, classNamesBtn, classNameSideMenu, classNamesSideMenu, classNameOverlay, classNamesOverlay, openMenuIconName }: SideMenuProps) => {
     let styl = new Styles(TemplateManager.getSideMenu())
     styl.add({ overflowY: "scroll" })
     styl.add(style)
-    
+
     let stylOpenMenuIcon = new Styles(TemplateManager.getIcon())
     stylOpenMenuIcon.add({ verticalAlign: "middle", float: "left" })
     stylOpenMenuIcon.add(styles?.openMenuIcon)
@@ -64,7 +64,7 @@ export const SideMenu: FC<SideMenuProps> = ({ children, linkGroups, style, style
                                     {linkGroups.title}
                                 </GridItem>
                                 : null}
-                            {linkGroups.linkGroups?.map((val: SideMenuLinkGroup, index) => {
+                            {linkGroups.linkGroups?.map((val: SideMenuLinkGroup, index: any) => {
                                 return (
                                     <GridContainer key={index}>
                                         {val.title ? <GridItem col={12}>{val.title}</GridItem> : null}

@@ -1,7 +1,5 @@
-export interface SloganProps {
+import { StylesProps } from "../../../../types.types"
+
+export interface SloganProps extends StylesProps {
     children?: any
-    align?: 'left' | 'right' | 'center'
-    style?: any
-    className?: string
-    classNames?: string[]
 }

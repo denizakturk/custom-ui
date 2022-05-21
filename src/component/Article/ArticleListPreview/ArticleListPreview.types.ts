@@ -1,7 +1,8 @@
-export interface ArticleListPreviewProps {
+import { StylesProps } from "../../../types.types"
+
+export interface ArticleListPreviewProps extends StylesProps {
     article: Article
     articleOption?: ArticleOption
-    style?: any
 }
 
 export interface Article {

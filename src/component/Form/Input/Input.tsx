@@ -5,7 +5,7 @@ import { TemplateManager } from "../../template";
 import { InputProps } from "./Input.types";
 import './Input.css'
 
-export const Input: FC<InputProps> = ({ name, defaultValue, type, style, className, classNames, onChange }: InputProps) => {
+export const Input: FC<InputProps> = ({ name, defaultValue, type, style, className, classNames, onChange, placeholder }: InputProps) => {
     let inputStyle = new Styles(TemplateManager.getInput())
     inputStyle.add(style)
     let inputClass = new ClassNames(["Customized-UI", "Input"])
@@ -18,7 +18,7 @@ export const Input: FC<InputProps> = ({ name, defaultValue, type, style, classNa
 
     return (
         <React.Fragment>
-            <input onChange={changeEvent} name={name ?? ""} type={type} value={value} style={inputStyle.getStyle()} className={inputClass.getName()} />
+            <input placeholder={placeholder ?? ""} onChange={changeEvent} name={name ?? ""} type={type} value={value} style={inputStyle.getStyle()} className={inputClass.getName()} />
         </React.Fragment>
     )
 }

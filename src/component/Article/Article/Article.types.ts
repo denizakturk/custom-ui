@@ -1,10 +1,8 @@
+import { StylesProps } from "../../../types.types";
 import { GridItemColSize } from "../../Container/Grid/Grid.types";
 import { ArticleListPreviewProps } from "../ArticleListPreview/ArticleListPreview.types";
 
-export interface ArticleProps {
-    className?: string
-    classNames?: string
-    style?: any
+export interface ArticleProps extends StylesProps {
     styles?: ArticleStyles
     article?: ArticleParam
     option?: ArticleOption

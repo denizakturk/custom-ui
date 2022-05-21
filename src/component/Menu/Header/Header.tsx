@@ -12,7 +12,7 @@ import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'
 import { TemplateManager } from '../../template'
 
-export const Header: FC<HeaderProps> = ({ style, widthLimit, className, classNames, linkGroups, children, dropShadow, logo, slogan, fontFamily, brandName, styles, logoLink }: { style?: any, widthLimit?: string, className?: string, classNames?: string[], children?: any, dropShadow?: boolean, logo?: string, slogan?: string, fontFamily?: string, brandName?: string, linkGroups?: SideMenuLinkGroups, styles?: HeaderStylesProps, logoLink?: string }) => {
+export const Header: FC<HeaderProps> = ({ style, widthLimit, className, classNames, linkGroups, children, dropShadow, logo, slogan, fontFamily, brandName, styles, logoLink }: HeaderProps) => {
   let clsN = new ClassNames(["Customized-UI", "Header"])
   let styl = new Styles(TemplateManager.getHeader())
   styl.add(style)

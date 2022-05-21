@@ -1,7 +1,5 @@
+import { StylesProps } from "../../../types.types"
 
-export interface SmallProps {
+export interface SmallProps extends StylesProps {
     children?: any
-    className?: string
-    classNames?: string[]
-    style?: any
 }

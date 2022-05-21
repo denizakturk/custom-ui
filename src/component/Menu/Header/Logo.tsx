@@ -6,7 +6,7 @@ import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'
 import { Link } from '../Link'
 import { TemplateManager } from '../../template'
-export const Logo: FC<LogoProps> = ({ src, style, className, classNames, link, alt, title }: { src: string, style?: any, className?: string, classNames?: string[], link?: string, alt?: string, title?: string }) => {
+export const Logo: FC<LogoProps> = ({ src, style, className, classNames, link, alt, title }: LogoProps) => {
     let styl = new Styles(TemplateManager.getLogo())
     styl.add(style)
 

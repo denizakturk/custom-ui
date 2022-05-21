@@ -6,7 +6,7 @@ import { Styles } from '../Styles';
 import { TemplateManager } from '../template';
 var fontLoad: boolean = false
 
-export const Icon: FC<IconProps> = ({ name, color, size, style, onClick, className, classNames, id }: { name: string, color?: string, size?: number, style?: any, onClick?: any, className?: string, classNames?: string[], id?: string }) => {
+export const Icon: FC<IconProps> = ({ name, size, style, onClick, className, classNames, id }: IconProps) => {
     let styl = new Styles(TemplateManager.getIcon())
     styl.add(style)
     let clsN = new ClassNames(["material-icons"])

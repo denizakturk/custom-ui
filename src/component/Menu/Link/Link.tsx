@@ -4,7 +4,7 @@ import { Icon } from "../../Icon"
 import { Styles } from '../../Styles'
 import { LinkProps, LinkStylesProps } from './Link.types'
 import { TemplateManager } from '../../template'
-export const Link: FC<LinkProps> = ({ href, children, icon, onClick, style, styles, className, classNames, iconSize }: { href?: string, children?: any, icon?: string, onClick?: any, style?: any, styles?: LinkStylesProps, className?: string, classNames?: string[], iconSize?: number }) => {
+export const Link: FC<LinkProps> = ({ href, children, icon, onClick, style, styles, className, classNames, iconSize }: LinkProps) => {
     let stylIcon = new Styles(TemplateManager.getIcon())
     stylIcon.add({ marginRight: "5px", verticalAlign: "middle" })
     stylIcon.add(styles?.icon)

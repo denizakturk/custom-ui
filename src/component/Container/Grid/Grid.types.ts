@@ -1,16 +1,14 @@
-export interface GridContainerProps {
+import { StylesProps } from "../../../types.types"
+
+export interface GridContainerProps extends StylesProps {
     children?: any
     fullWidth?: boolean
-    style?: any
     widthLimit?: string
-    className?: string
-    classNames?: string[]
 }
 
-export interface GridItemProps {
+export interface GridItemProps extends StylesProps {
     children?: any
     colSize?: GridItemColSize
-    style?: any
     col?: number
     hideOnly?: 'xs' | 'sm' | 'md' | 'l' | 'xl'
     hideAndUp?: 'sm' | 'md' | 'l'

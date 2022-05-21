@@ -3,7 +3,7 @@ import { ImageProps } from './Image.types'
 import './Image.css'
 import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'
-export const Image: FC<ImageProps> = ({ src, fluid, rounded, style, className, classNames, heightFit, alt, title }: { src?: string, fluid?: boolean, rounded?: boolean, style?: any, className?: string, classNames?: string[], heightFit?: string, alt?: string, title?: string }) => {
+export const Image: FC<ImageProps> = ({ src, fluid, rounded, style, className, classNames, heightFit, alt, title }: ImageProps) => {
     let clsN = new ClassNames(["Customized-UI", "Image"])
     let styl = new Styles(style)
     clsN.add(className).addMany(classNames)

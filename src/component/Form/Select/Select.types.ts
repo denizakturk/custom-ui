@@ -1,10 +1,8 @@
-export interface SelectProps {
+import { StylesProps } from "../../../types.types"
+
+export interface SelectProps extends StylesProps {
     name?: string
     placeholder?: string
-    className?: string
-    classNames?: string[]
-    style?: any
-    styles?: any
     selectedValue?: SelectValueProps
     values: SelectValueProps[]
     isSearchable?: boolean

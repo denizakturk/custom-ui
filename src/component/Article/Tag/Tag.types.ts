@@ -1,8 +1,6 @@
-export interface TagProps {
-    className?: string
-    classNames?: string[]
-    style?: any
+import { StylesProps } from "../../../types.types"
+
+export interface TagProps extends StylesProps {
     link?: string
     name?: string
-    slug?: string
 }

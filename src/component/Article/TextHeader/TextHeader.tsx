@@ -4,7 +4,7 @@ import './TextHeader.css'
 import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'
 import { TemplateManager } from '../../template'
-export const TextHeader: FC<TextHeaderProps> = ({ size, text, children, style, className, classNames }: { size?: string, text?: string, children?: any, style?: any, className?: string, classNames?: string[] }) => {
+export const TextHeader: FC<TextHeaderProps> = ({ size, text, children, style, className, classNames }: TextHeaderProps) => {
     let styl = new Styles(TemplateManager.getTextHeader())
     styl.add(style)
     let clsN = new ClassNames(['Customized-UI']);

@@ -1,9 +1,7 @@
-export interface ParagraphProps {
+import { StylesProps } from "../../../types.types"
+
+export interface ParagraphProps extends StylesProps {
     children?: any
-    fontFamily?: string
-    className?: string
-    classNames?: string[]
-    style?: any
     text?: string
     nl2br?: boolean
 }

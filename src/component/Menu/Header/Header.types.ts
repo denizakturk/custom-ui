@@ -1,6 +1,7 @@
+import { StylesProps } from "../../../types.types";
 import { SideMenuLinkGroups } from "../SideMenu/SideMenu.types";
 
-export interface HeaderProps {
+export interface HeaderProps extends StylesProps {
     children?: any
     dropShadow?: boolean
     logo?: string
@@ -8,10 +9,7 @@ export interface HeaderProps {
     fontFamily?: string
     brandName?: string
     linkGroups?: SideMenuLinkGroups
-    className?: string
-    classNames?: string[]
     styles?: HeaderStylesProps
-    style?: any
     widthLimit?: string
     logoLink?: string
 }

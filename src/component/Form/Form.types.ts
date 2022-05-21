@@ -1,8 +1,6 @@
-export interface FormProps {
-    style?: any
-    styles?: any
-    className?: any
-    classNames?: any
+import { StylesProps } from "../../types.types"
+
+export interface FormProps extends StylesProps {
     action?: string
     method?: string
     children?: any

@@ -5,7 +5,7 @@ import { GridContainerProps, GridItemColSize, GridItemProps } from './Grid.types
 import { ClassNames } from '../../ClassNames';
 import { Styles } from '../../Styles';
 import { TemplateManager } from '../../template';
-export const GridContainer: FC<GridContainerProps> = ({ children, fullWidth = false, style, widthLimit, className, classNames }: { children?: any, fullWidth?: boolean, style?: any, widthLimit?: string, className?: string, classNames?: string[] }) => {
+export const GridContainer: FC<GridContainerProps> = ({ children, fullWidth = false, style, widthLimit, className, classNames }: GridContainerProps) => {
     let styl = new Styles(TemplateManager.getGridContainer())
     styl.add(style)
     let clsN = new ClassNames(["Customized-UI", "Grid", "Container"])

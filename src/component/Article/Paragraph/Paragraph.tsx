@@ -5,7 +5,7 @@ import { ClassNames } from '../../ClassNames';
 import { Styles } from '../../Styles';
 import { ContentHelper } from '../../helper';
 import { TemplateManager } from '../../template';
-export const Paragraph: FC<ParagraphProps> = ({ text, nl2br, classNames, className, children, style }: { text?: string, nl2br?: boolean, children?: any, fontFamily?: string, classNames?: string[], className?: string, style?: any }) => {
+export const Paragraph: FC<ParagraphProps> = ({ text, nl2br, classNames, className, children, style }: ParagraphProps) => {
     let contentHelper = new ContentHelper
     let clsN = new ClassNames(["Customized-UI"])
     let styl = new Styles(TemplateManager.getParagraph())

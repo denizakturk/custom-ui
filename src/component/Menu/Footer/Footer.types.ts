@@ -1,5 +1,6 @@
-export interface FooterProps {
-    style?: any
+import { StylesProps } from "../../../types.types"
+
+export interface FooterProps extends StylesProps {
     styles?: FooterStylesProps
     children?: any
     logo?: string
@@ -9,8 +10,6 @@ export interface FooterProps {
     slogan?: string
     dropShadow?: boolean
     brandName?: string
-    className?: string
-    classNames?: string[]
     widthLimit?: string
 }
 

@@ -1,10 +1,7 @@
 import { ChangeEvent, HTMLInputTypeAttribute } from "react"
+import { StylesProps } from "../../../types.types"
 
-export interface TextAreaProps {
-    style?: any
-    styles?: any
-    className?: string
-    classNames?: string[]
+export interface TextAreaProps extends StylesProps {
     value?: any
     rows?: number
     id?: string

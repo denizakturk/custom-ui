@@ -1,7 +1,8 @@
-export interface SideMenuProps {
+import { StylesProps } from "../../../types.types"
+
+export interface SideMenuProps extends StylesProps {
     children?: any
     linkGroups?: any
-    style?: any
     styles?: SideMenuStylesProps
     LinkGroups?: SideMenuLinkGroups
     classNameSideMenu?: string

@@ -1,12 +1,11 @@
-export interface LinkProps {
+import { StylesProps } from "../../../types.types"
+
+export interface LinkProps extends StylesProps {
     children?: any
     icon?: string
     onClick?: any
-    style?: any
     styles?: LinkStylesProps
     href?: string
-    className?: string
-    classNames?: string[],
     iconSize?: 18 | 24 | 36 | 48
 }
 

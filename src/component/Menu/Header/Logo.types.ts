@@ -1,7 +1,7 @@
-export interface LogoProps {
+import { StylesProps } from "../../../types.types"
+
+export interface LogoProps extends StylesProps {
     src: string
-    className?: string
-    classNames?: string[]
     link?: string
     alt?:string
     title?:string
