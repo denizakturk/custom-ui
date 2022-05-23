@@ -5,10 +5,11 @@ import { Styles } from '../../Styles'
 import { TemplateManager } from '../../template'
 import './Select.css'
 import { Icon } from '../../Icon'
+import { IconStyle } from '../../template.classes'
 export const Select: FC<SelectProps> = ({ name, values, placeholder, className, classNames, style, selectedValue, isSearchable = false, onChange }: SelectProps) => {
     let mainDivStyle = new Styles(TemplateManager.getSelect())
     let dropDownListDivStyle = new Styles(TemplateManager.getSelect())
-    let dropdownIconStyle = new Styles(TemplateManager.getSelect())
+    let dropdownIconStyle = new Styles(new IconStyle(TemplateManager.getSelect()))
     let searchInputStyle = new Styles(TemplateManager.getSelect())
     searchInputStyle.add({ verticalAlign: "middle" })
     dropdownIconStyle.add({ verticalAlign: "middle" })
