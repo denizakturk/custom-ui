@@ -1,7 +1,7 @@
 import { ChangeEvent, HTMLInputTypeAttribute } from "react"
-import { StylesProps } from "../../../types.types"
+import { IDProps, StylesProps } from "../../../types.types"
 
-export interface InputProps extends StylesProps {
+export interface InputProps extends StylesProps, IDProps {
     defaultValue?: any
     name?: string
     type?: HTMLInputTypeAttribute | undefined

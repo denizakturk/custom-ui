@@ -4,3 +4,7 @@ export interface StylesProps {
     className?: string
     classNames?: string[]
 }
+
+export interface IDProps {
+    id?: string
+}

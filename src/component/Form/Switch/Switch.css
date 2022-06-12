@@ -1,0 +1,82 @@
+.Customized-UI.Switch-Container {
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #dddddd;
+    padding: 2px;
+}
+
+.Customized-UI.Switch.Button {
+    width: 26px;
+    height: 26px;
+    border-radius: 13px;
+    background-color: #f9f9f9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation-name: positionFalse;
+    animation-duration: 1s;
+}
+
+.Customized-UI.Switch.Status-Container {
+    width: 56px;
+    height: 26px;
+    border-radius: 13px;
+    background-color: #d9d9d9;
+    box-shadow: inset 0px 1px 2px #000;
+    position: relative;
+    animation-name: statusFalse;
+    animation-duration: 1s;
+}
+
+.Customized-UI.Switch.Status-Container.true {
+    animation-name: statusTrue;
+    animation-duration: 3s;
+    background-color: #4BB543;
+}
+
+.Customized-UI.Switch.Button.true {
+    animation-name: positionTrue;
+    animation-duration: 1s;
+    left: 30px;
+}
+
+@keyframes statusTrue {
+    from {
+        background-color: #d9d9d9;
+    }
+
+    to {
+        background-color: #4BB543;
+    }
+}
+
+@keyframes statusFalse {
+    from {
+        background-color: #4BB543;
+    }
+
+    to {
+        background-color: #d9d9d9;
+    }
+}
+
+@keyframes positionTrue {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 30px;
+    }
+}
+
+@keyframes positionFalse {
+    from {
+        left: 30px;
+    }
+
+    to {
+        left: 0;
+    }
+}

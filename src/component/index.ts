@@ -5,4 +5,4 @@ export { TextHeader, Paragraph, Fonts, Image, Small, Article, ArticleListPreview
 export { Icon } from './Icon'
 export { DarkTemplate, LightTemplate, TemplateManager } from './template'
 export { TemplateProps } from './template.types'
-export { Select, Button, Form, Input, TextArea } from './Form'
+export { Select, Button, Form, Input, TextArea, Switch } from './Form'
