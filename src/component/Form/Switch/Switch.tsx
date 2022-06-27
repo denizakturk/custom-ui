@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { SwitchProps } from './Switch.types'
 import './Switch.css'
-export const Switch: FC<SwitchProps> = ({ className, classNames, id, style, styles, defaultStatus, name, value, radio }: SwitchProps) => {
+export const Switch: FC<SwitchProps> = ({ className, classNames, id, style, styles, defaultStatus, name, value, radio, onChange }: SwitchProps) => {
     let groupElements: NodeListOf<HTMLInputElement>
     var statusContainer: HTMLElement | null
     let switchButton: HTMLElement | null
@@ -23,6 +23,14 @@ export const Switch: FC<SwitchProps> = ({ className, classNames, id, style, styl
         switchStatus = !switchStatus
         if (checkbox) {
             checkbox.checked = switchStatus
+            if (onChange) {
+                if(switchStatus){
+                    onChange(value ?? "")
+                } else {
+                    onChange("")
+                }
+                
+            }
         }
         if (switchStatus) {
             if (!statusContainer?.classList?.contains('true')) {
