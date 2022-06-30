@@ -1,13 +1,13 @@
 import React, { FC } from "react";
 import { SwitchProps } from './Switch.types'
 import './Switch.css'
-export const Switch: FC<SwitchProps> = ({ className, classNames, id, style, styles, defaultStatus, name, value, radio, onChange }: SwitchProps) => {
+export const Switch: FC<SwitchProps> = ({ className, classNames, id, style, styles, defaultStatus, name, value, radio=false, onChange }: SwitchProps) => {
     let groupElements: NodeListOf<HTMLInputElement>
     var statusContainer: HTMLElement | null
     let switchButton: HTMLElement | null
     let checkbox: HTMLInputElement | null
     let checkboxIdentity: string = (name ?? "") + (value ?? "")
-    let switchStatus = defaultStatus ?? false;
+    let switchStatus = false;
 
     let allPassive = () => {
         groupElements = getGroupedElements()
@@ -49,33 +49,22 @@ export const Switch: FC<SwitchProps> = ({ className, classNames, id, style, styl
         }
     }
     let setDefaultStatus = () => {
-        if (checkbox) {
-            checkbox.checked = switchStatus
-        }
-        if (switchStatus) {
-            statusContainer?.classList?.add('true')
-            switchButton?.classList?.add('true')
-        } else {
-            if (statusContainer?.classList?.contains('true')) {
-                statusContainer?.classList?.remove('true')
-            }
-            if (switchButton?.classList?.contains('true')) {
-                switchButton?.classList?.remove('true')
-            }
+        if (checkbox && defaultStatus) {
+            checkbox.checked = false
+            switchStatus = false
+            setTimeout(()=>{toggleSwitch()}, 500)
         }
     }
     let getGroupedElements = (): NodeListOf<HTMLInputElement> => {
         return document.querySelectorAll('.Customized-UI.Switch.Button' + (name ? "." + name : "") + '.true:not(.' + checkboxIdentity + ')') as NodeListOf<HTMLInputElement>;
     }
     if (typeof window != "undefined") {
-        groupElements = getGroupedElements();
         statusContainer = document.getElementById('Customized-UI-Switch-StatusContainer' + (checkboxIdentity ?? "")) as HTMLElement | null
         switchButton = document.getElementById("Customized-UI-Switch-Button" + (checkboxIdentity ?? "")) as HTMLElement | null
         checkbox = document.getElementById(
             "Customized-UI-Checkbox-" + (checkboxIdentity ?? ""),
         ) as HTMLInputElement | null;
         setDefaultStatus()
-
     }
     return (<div className="Customized-UI Switch-Container">
         <div id={"Customized-UI-Switch-StatusContainer" + (checkboxIdentity ?? "")} className="Customized-UI Switch Status-Container">
