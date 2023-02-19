@@ -1,6 +1,6 @@
 export { GridContainer, GridItem } from './Container/Grid'
 export { Container } from './Container'
-export { Header, Slogan, SideMenu, Footer, Link } from './Menu'
+export { Header, Slogan, SideMenu, Footer, Link, Logo } from './Menu'
 export { TextHeader, Paragraph, Fonts, Image, Small, Article, ArticleListPreview, Tag } from './Article'
 export { Icon } from './Icon'
 export { DarkTemplate, LightTemplate, TemplateManager } from './template'
