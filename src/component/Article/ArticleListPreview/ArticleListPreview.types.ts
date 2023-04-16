@@ -11,7 +11,8 @@ export interface Article {
     imageTitle?: string
     title?: string
     description?: string
-    link?: string
+    link?: string,
+    iconicLink?:boolean
 }
 
 export interface ArticleOption {
@@ -22,4 +23,5 @@ export interface ArticleOptionImage {
     maxHeight?: string
     isFluid?: boolean
     isRounded?: boolean
+    link?:boolean
 }

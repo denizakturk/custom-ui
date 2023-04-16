@@ -18,15 +18,22 @@ export const ArticleListPreview: FC<ArticleListPreviewProps> = ({ article, artic
     return (
         <div className={clsNMainDiv.getName()} style={styl.getStyle()}>
             <div className="Customized-UI ArticleListPreview BodyContainer">
-                <div className={clsNImageDiv.getName()}>
-                    <Image src={article.image} alt={article?.imageAlt} title={article?.title} heightFit={articleOption?.image?.maxHeight ?? ""} fluid={articleOption?.image?.isFluid ?? false} rounded={articleOption?.image?.isRounded ?? false} />
-                </div>
-                <div className={clsNContentDiv.getName()}>
-                    <TextHeader size={"h4"}>{article?.title}</TextHeader>
-                    <Paragraph nl2br={true} text={article?.description} />
-                </div>
+                {article?.image ? <div className={clsNImageDiv.getName()}>
+                    {article?.link && articleOption?.image?.link ? 
+                    <Link href={article?.link} >
+                        <Image src={article.image} alt={article?.imageAlt} title={article?.title} heightFit={articleOption?.image?.maxHeight ?? ""} fluid={articleOption?.image?.isFluid ?? false} rounded={articleOption?.image?.isRounded ?? false} /> 
+                    </Link>
+                    : <Image src={article.image} alt={article?.imageAlt} title={article?.title} heightFit={articleOption?.image?.maxHeight ?? ""} fluid={articleOption?.image?.isFluid ?? false} rounded={articleOption?.image?.isRounded ?? false} />}
+                
+                </div> : null}
+                {article?.title || article?.description ?
+                    <div className={clsNContentDiv.getName()}>
+                        {article?.title ? <TextHeader size={"h4"}>{article?.title}</TextHeader> : null}
+                        {article?.description ? <Paragraph nl2br={true} text={article?.description} /> : null}
+                    </div>
+                    : null}
             </div>
-            {article?.link ?
+            {article?.link && article.iconicLink ?
                 <div className={clsNLinkContainer.getName()}>
                     <Link icon="arrow_forward_ios" href={article?.link} iconSize={24} />
                 </div>
