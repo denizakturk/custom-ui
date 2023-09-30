@@ -60,3 +60,26 @@
 .Customized-UI.Dropdown-Button {
     float: right;
 }
+
+.Customized-UI-Selected-Item-Container {
+    display:flex;
+    width:100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: stretch;
+    border-bottom:1px solid #dddddd;
+}
+
+.Customized-UI-Selected-Item:first {
+    padding-left:0;
+    margin-left:0;
+}
+
+.Customized-UI-Selected-Item {
+    padding:0 15px;
+    margin:5px;
+    border:1px solid #dddddd;
+    border-radius: 15px;
+}

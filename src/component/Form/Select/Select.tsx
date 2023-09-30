@@ -6,11 +6,15 @@ import { TemplateManager } from '../../template'
 import './Select.css'
 import { Icon } from '../../Icon'
 import { IconStyle } from '../../template.classes'
-export const Select: FC<SelectProps> = ({ name, values, placeholder, className, classNames, style, selectedValue, isSearchable = false, onChange }: SelectProps) => {
+export const Select: FC<SelectProps> = ({ name, values, placeholder, className, classNames, style, styles, selectedValue, selectedValues, isSearchable = false, onChange, isMultiple }: SelectProps) => {
     let mainDivStyle = new Styles(TemplateManager.getSelect())
     let dropDownListDivStyle = new Styles(TemplateManager.getSelect())
     let dropdownIconStyle = new Styles(new IconStyle(TemplateManager.getSelect()))
     let searchInputStyle = new Styles(TemplateManager.getSelect())
+    let multipleSelectItemIconStyle = new Styles(styles?.MultipleSelectIcon)
+    multipleSelectItemIconStyle.add({ verticalAlign: "bottom" })
+    let multipleItemStyle = new Styles(styles?.MultipleSelectedItem)
+    let multipleItemContainerStyle = new Styles(styles?.MultipleSelectedContainer)
     searchInputStyle.add({ verticalAlign: "middle" })
     dropdownIconStyle.add({ verticalAlign: "middle" })
     mainDivStyle.add(style)
@@ -29,11 +33,27 @@ export const Select: FC<SelectProps> = ({ name, values, placeholder, className, 
             document.getElementById('Customized-UI-Select-Dropdown-List' + name)?.classList.remove('show')
         }
     }
+    var multiple: SelectValueProps[] = selectedValues ?? [];
+    const setMultipleValues = (value: SelectValueProps) => {
+        let isContain = false;
+        multiple.forEach((val, index) => {
+            if (val.id == value.id) {
+                multiple.splice(index, 1)
+                isContain = true
+            }
+        })
+        if (!isContain) {
+            multiple.push(value)
+        }
+        if (onChange) {
+            onChange(multiple)
+        }
+    }
 
     let setValue = (value: SelectValueProps) => {
         document.getElementById('Customized-UI-Select-Search-Input' + name)?.setAttribute('value', value.name)
         document.getElementById('Customized-UI-Select-Value' + name)?.setAttribute('value', value.id)
-        if(onChange){ onChange(value) }
+        if (onChange) { onChange(value) }
         toggleDropdownShow()
     }
     if (typeof window !== 'undefined') {
@@ -51,10 +71,16 @@ export const Select: FC<SelectProps> = ({ name, values, placeholder, className, 
             }
         });
     }
-
     return (
         <React.Fragment>
             <div className={clsN.getName()} id={"Customized-UI-Select-Area" + name} style={mainDivStyle.getStyle()}>
+                {isMultiple && selectedValues?.length ?
+                    <div className={"Customized-UI-Selected-Item-Container"} style={multipleItemContainerStyle?.getStyle()}>
+                        {selectedValues?.map((val, index) => {
+                            return <label className={"Customized-UI-Selected-Item"} key={index} style={multipleItemStyle?.getStyle()}>{val.name}</label>
+                        })}
+                    </div>
+                    : null}
                 <input id={"Customized-UI-Select-Value" + name} type="hidden" value={selectedValue?.id} name={name ?? "select-value"} />
                 <div className={clsSearchInputDiv.getName()}>
                     <input type="text" placeholder={placeholder ?? ""} id={"Customized-UI-Select-Search-Input" + name} className={clsSearchInput.getName()} readOnly={!isSearchable} value={selectedValue?.name} style={searchInputStyle.getStyle()} />
@@ -64,8 +90,8 @@ export const Select: FC<SelectProps> = ({ name, values, placeholder, className, 
                     <ul style={{ listStyle: 'none', margin: 0 }}>
                         {values.map((val, index) => {
                             return (
-                                <li onClick={() => { setValue(val) }} key={index}>
-                                    {val.name}
+                                <li onClick={() => { isMultiple ? setMultipleValues(val) : setValue(val) }} key={index}>
+                                    {val.name} {isMultiple && multiple?.findIndex(x => x.id == val.id) > -1 ? <Icon name={"done"} style={multipleSelectItemIconStyle.getStyle()} /> : null}
                                 </li>
                             )
                         })}
