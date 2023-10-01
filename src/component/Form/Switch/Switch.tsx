@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { SwitchProps } from './Switch.types'
-import './Switch.css'
+//import './Switch.css'
 export const Switch: FC<SwitchProps> = ({ className, classNames, id, style, styles, defaultStatus, name, value, radio=false, onChange }: SwitchProps) => {
     let groupElements: NodeListOf<HTMLInputElement>
     var statusContainer: HTMLElement | null

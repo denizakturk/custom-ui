@@ -9,8 +9,7 @@ import { ArticleListPreview } from '../ArticleListPreview'
 import { Styles } from '../../Styles'
 import { Tag } from '../Tag'
 import { TemplateManager } from '../../template'
-
-import './Article.css'
+//import './Article.css'
 
 export const Article: FC<ArticleProps> = ({ tags, article, option, articleListPreviews, style, articleListPreviewsOption, styles }: ArticleProps) => {
     let clsNMainDiv = new ClassNames(["Customized-UI", "Article", "MainContainer"])

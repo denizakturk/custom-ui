@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { IconProps } from "./Icon.types";
-import './Icon.css'
+//import './Icon.css'
 import { ClassNames } from '../ClassNames';
 import { Styles } from '../Styles';
 import { TemplateManager } from '../template';

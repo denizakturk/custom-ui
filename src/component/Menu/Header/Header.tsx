@@ -1,13 +1,12 @@
 
 import React, { FC } from 'react'
-import { HeaderProps, HeaderStylesProps } from "./Header.types"
-import './Header.css'
+import { HeaderProps } from "./Header.types"
+//import './Header.css'
 import { GridContainer, GridItem } from '../../Container/Grid'
 import { TextHeader } from '../../Article'
 import { Logo } from './Logo'
 import { Slogan } from './Slogan'
 import { SideMenu } from './../SideMenu'
-import { SideMenuLinkGroups } from '../SideMenu/SideMenu.types'
 import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'
 import { TemplateManager } from '../../template'

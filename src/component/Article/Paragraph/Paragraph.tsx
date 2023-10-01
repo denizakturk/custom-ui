@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { ParagraphProps } from "./Paragraph.types";
-import './Paragraph.css'
+//import './Paragraph.css'
 import { ClassNames } from '../../ClassNames';
 import { Styles } from '../../Styles';
 import { ContentHelper } from '../../helper';

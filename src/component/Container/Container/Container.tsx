@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import './Container.css'
+//import './Container.css'
 import { ContainerProps } from './Container.types'
 import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'

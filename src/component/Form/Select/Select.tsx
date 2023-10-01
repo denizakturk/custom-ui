@@ -3,7 +3,7 @@ import { SelectProps, SelectValueProps } from './Select.types'
 import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'
 import { TemplateManager } from '../../template'
-import './Select.css'
+//import './Select.css'
 import { Icon } from '../../Icon'
 import { IconStyle } from '../../template.classes'
 export const Select: FC<SelectProps> = ({ name, values, placeholder, className, classNames, style, styles, selectedValue, selectedValues, isSearchable = false, onChange, isMultiple }: SelectProps) => {
@@ -15,6 +15,8 @@ export const Select: FC<SelectProps> = ({ name, values, placeholder, className, 
     multipleSelectItemIconStyle.add({ verticalAlign: "bottom" })
     let multipleItemStyle = new Styles(styles?.MultipleSelectedItem)
     let multipleItemContainerStyle = new Styles(styles?.MultipleSelectedContainer)
+    let multipleSelectedItemCloseStyle = new Styles({verticalAlign:"middle", cursor:"pointer", fontSize:"18px"})
+    multipleSelectedItemCloseStyle.add(styles?.MultipleSelectedItemClose)
     searchInputStyle.add({ verticalAlign: "middle" })
     dropdownIconStyle.add({ verticalAlign: "middle" })
     mainDivStyle.add(style)
@@ -74,10 +76,10 @@ export const Select: FC<SelectProps> = ({ name, values, placeholder, className, 
     return (
         <React.Fragment>
             <div className={clsN.getName()} id={"Customized-UI-Select-Area" + name} style={mainDivStyle.getStyle()}>
-                {isMultiple && selectedValues?.length ?
+                {isMultiple && multiple?.length ?
                     <div className={"Customized-UI-Selected-Item-Container"} style={multipleItemContainerStyle?.getStyle()}>
-                        {selectedValues?.map((val, index) => {
-                            return <label className={"Customized-UI-Selected-Item"} key={index} style={multipleItemStyle?.getStyle()}>{val.name}</label>
+                        {multiple?.map((val, index) => {
+                            return <label className={"Customized-UI-Selected-Item"} key={index} style={multipleItemStyle?.getStyle()}>{val.name} <Icon name="close" onClick={()=>{setMultipleValues(val)}} size={18} style={multipleSelectedItemCloseStyle.getStyle()}/></label>
                         })}
                     </div>
                     : null}

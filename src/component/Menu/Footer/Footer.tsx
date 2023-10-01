@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { Logo, Slogan } from '../../Menu/Header'
 import { GridContainer, GridItem } from '../../Container/Grid'
-import { FooterProps, FooterStylesProps } from './Footer.types'
+import { FooterProps } from './Footer.types'
 import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'
 import { TemplateManager } from '../../template'

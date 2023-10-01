@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
-import { SideMenuLink, SideMenuLinkGroup, SideMenuLinkGroups, SideMenuProps, SideMenuStylesProps } from "./SideMenu.types";
-import './SideMenu.css'
-import './../../hide.css'
+import { SideMenuLink, SideMenuLinkGroup, SideMenuProps } from "./SideMenu.types";
+//import './SideMenu.css'
+//import './../../hide.css'
 import { Icon } from '../../Icon';
 import { Link } from '../Link';
 import { GridContainer, GridItem } from '../../Container/Grid';

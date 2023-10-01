@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
-import './Grid.css';
-import './../../hide.css'
+//import './Grid.css';
+//import './../../hide.css'
 import { GridContainerProps, GridItemColSize, GridItemProps } from './Grid.types'
 import { ClassNames } from '../../ClassNames';
 import { Styles } from '../../Styles';

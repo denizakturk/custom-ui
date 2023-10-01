@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { ImageProps } from './Image.types'
-import './Image.css'
+//import './Image.css'
 import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'
 export const Image: FC<ImageProps> = ({ src, fluid, rounded, style, className, classNames, heightFit, alt, title }: ImageProps) => {

@@ -14,6 +14,7 @@ export interface SelectProps extends StylesProps {
 
 export interface SelectStylesProps {
     MultipleSelectedItem?:any
+    MultipleSelectedItemClose?:any
     MultipleSelectedContainer?:any
     MultipleSelectIcon?:any
 }

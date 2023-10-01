@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import { LogoProps } from './Logo.types'
 import { Image } from '../../Article/Image'
-import './Logo.css'
+//import './Logo.css'
 import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'
 import { Link } from '../Link'

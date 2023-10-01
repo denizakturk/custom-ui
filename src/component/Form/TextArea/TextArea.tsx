@@ -3,7 +3,7 @@ import { ClassNames } from "../../ClassNames";
 import { Styles } from "../../Styles";
 import { TemplateManager } from "../../template";
 import { TextAreaProps } from "./TextArea.types";
-import './TextArea.css'
+//import './TextArea.css'
 
 export const TextArea: FC<TextAreaProps> = ({ name, value, rows, readOnly, id, className, classNames, style, resize, onChange }: TextAreaProps) => {
     let textAreaClassName = new ClassNames(['Customized-UI', 'TextArea'])

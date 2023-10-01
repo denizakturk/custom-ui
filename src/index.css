@@ -1,0 +1,990 @@
+/* Article */
+
+.Customized-UI.Article.MainContainer {
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+    -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+    -moz-border-radius-bottomleft: 8px;
+    -moz-border-radius-bottomright: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.Customized-UI.Article.ImageContainer {
+    background-color: transparent;
+}
+
+.Customized-UI.Article.ContentContainer {
+    background-color: transparent;
+    padding: 15px;
+}
+
+.Customized-UI.Article.FooterContainer {
+    background-color: transparent;
+    padding: 0;
+}
+
+.Customized-UI.Article.TagContainer {
+    background-color: transparent;
+    padding: 15px 0;
+}
+
+/* Article List Preview  */
+
+.Customized-UI.ArticleListPreview.MainContainer {
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+    -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+    -moz-border-radius-bottomleft: 8px;
+    -moz-border-radius-bottomright: 8px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    height: 100%;
+    position: relative;
+}
+
+.Customized-UI.ArticleListPreview.ImageContainer {
+    background-color: transparent;
+}
+
+.Customized-UI.ArticleListPreview.BodyContainer {
+    max-height: 80%;
+    overflow-y: hidden;
+}
+
+.Customized-UI.ArticleListPreview.ContentContainer {
+    background-color: transparent;
+    padding: 15px;
+}
+
+.Customized-UI.ArticleListPreview.LinkContainer {
+    background-color: transparent;
+    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-height: 20%;
+    width: 100%;
+}
+
+/* Image */
+
+.Customized-UI.Image {
+    vertical-align: middle;
+}
+
+.Customized-UI.Image.Fluid, .Customized-UI.Image.HeightFit.Fluid {
+    width: 100% !important;
+}
+
+.Customized-UI.Image.RoundedBorder {
+    -webkit-border-top-left-radius: 8px;
+    -webkit-border-top-right-radius: 8px;
+    -moz-border-radius-topleft: 8px;
+    -moz-border-radius-topright: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.Customized-UI.Image.HeightFit {
+    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Paragraph */
+
+p.Customized-UI {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.2rem;
+}
+
+/* Tag */
+
+.Customized-UI.Tag {
+    margin-right: 15px;
+}
+
+.Customized-UI.Tag:Hover {
+    margin-right: 15px;
+    text-decoration: underline;
+}
+
+/* TextHeader */
+
+h1.Customized-UI {
+    margin:0;
+    padding: 0;
+    font-size: 2rem;
+    padding: 5px 0 8px 0;
+    font-weight: 700;
+}
+
+h2.Customized-UI {
+    margin:0;
+    padding: 0;
+    font-size: 1.6rem;
+    padding: 5px 0 8px 0;
+    font-weight: 700;
+}
+
+h3.Customized-UI {
+    margin:0;
+    padding: 0;
+    font-size: 1.4rem;
+    padding: 5px 0 8px 0;
+    font-weight: 700;
+}
+
+h4.Customized-UI {
+    margin:0;
+    padding: 0;
+    font-size: 1.2rem;
+    padding: 5px 0 8px 0;
+    font-weight: 700;
+}
+
+h5.Customized-UI {
+    margin:0;
+    padding: 0;
+    font-size: 1rem;
+    padding: 5px 0 8px 0;
+    font-weight: 700;
+}
+
+h6.Customized-UI {
+    margin:0;
+    padding: 0;
+    font-size: 0.8rem;
+    padding: 5px 0 8px 0;
+    font-weight: 700;
+}
+
+/* Container */
+
+.Customized-UI.Container {
+    width: 100%;
+    background-color: transparent;
+    margin: 0 auto;
+}
+
+/* Grid */
+
+.Customized-UI.Grid.Container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: top;
+    align-content: space-around;
+    gap: 5px 8px;
+    column-gap: 8px;
+    width: 96%;
+    padding: 2%;
+}
+
+.Customized-UI.Grid.Item {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-1 {
+    flex: 1 8%;
+    max-width: 8%;
+}
+
+.Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-2 {
+    flex: 1 16%;
+    max-width: 16%;
+}
+
+.Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-3 {
+    flex: 1 24%;
+    max-width: 24%;
+}
+
+.Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-4 {
+    flex: 1 32%;
+    max-width: 32%;
+}
+
+.Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-5 {
+    flex: 1 40%;
+    max-width: 40%;
+}
+
+.Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-6 {
+    flex: 1 48%;
+    max-width: 48%;
+}
+
+.Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-7 {
+    flex: 1 56%;
+    max-width: 56%;
+}
+
+.Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-8 {
+    flex: 1 64%;
+    max-width: 64%;
+}
+
+.Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-9 {
+    flex: 1 72%;
+    max-width: 72%;
+}
+
+.Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-10 {
+    flex: 1 80%;
+    max-width: 80%;
+}
+
+.Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-11 {
+    flex: 1 88%;
+    max-width: 88%;
+}
+
+.Customized-UI.Grid.Container .Customized-UI.Grid.Item.col-12 {
+    flex: 1 96%;
+    max-width: 96%;
+}
+
+@media (max-width: 320px) {
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item {
+        flex: 1 100%;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-1, .Customized-UI.Grid.Container .Customized-UI.Grid.Item {
+        flex: 1 8%;
+        max-width: 8%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-2 {
+        flex: 1 16%;
+        max-width: 16%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-3 {
+        flex: 1 24%;
+        max-width: 24%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-4 {
+        flex: 1 32%;
+        max-width: 32%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-5 {
+        flex: 1 40%;
+        max-width: 40%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-6 {
+        flex: 1 48%;
+        max-width: 48%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-7 {
+        flex: 1 56%;
+        max-width: 56%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-8 {
+        flex: 1 64%;
+        max-width: 64%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-9 {
+        flex: 1 72%;
+        max-width: 72%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-10 {
+        flex: 1 80%;
+        max-width: 80%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-11 {
+        flex: 1 88%;
+        max-width: 88%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xs-12 {
+        flex: 1 96%;
+        max-width: 96%;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-1, .Customized-UI.Grid.Container .Customized-UI.Grid.Item {
+        flex: 1 8%;
+        max-width: 8%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-2 {
+        flex: 1 16%;
+        max-width: 16%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-3 {
+        flex: 1 24%;
+        max-width: 24%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-4 {
+        flex: 1 32%;
+        max-width: 32%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-5 {
+        flex: 1 40%;
+        max-width: 40%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-6 {
+        flex: 1 48%;
+        max-width: 48%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-7 {
+        flex: 1 56%;
+        max-width: 56%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-8 {
+        flex: 1 64%;
+        max-width: 64%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-9 {
+        flex: 1 72%;
+        max-width: 72%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-10 {
+        flex: 1 80%;
+        max-width: 80%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-11 {
+        flex: 1 88%;
+        max-width: 88%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.sm-12 {
+        flex: 1 96%;
+        max-width: 96%;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-1, .Customized-UI.Grid.Container .Customized-UI.Grid.Item {
+        flex: 1 8%;
+        max-width: 8%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-2 {
+        flex: 1 16%;
+        max-width: 16%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-3 {
+        flex: 1 24%;
+        max-width: 24%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-4 {
+        flex: 1 32%;
+        max-width: 32%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-5 {
+        flex: 1 40%;
+        max-width: 40%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-6 {
+        flex: 1 48%;
+        max-width: 48%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-7 {
+        flex: 1 56%;
+        max-width: 56%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-8 {
+        flex: 1 64%;
+        max-width: 64%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-9 {
+        flex: 1 72%;
+        max-width: 72%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-10 {
+        flex: 1 80%;
+        max-width: 80%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-11 {
+        flex: 1 88%;
+        max-width: 88%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.md-12 {
+        flex: 1 96%;
+        max-width: 96%;
+    }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-1, .Customized-UI.Grid.Container .Customized-UI.Grid.Item {
+        flex: 1 8%;
+        max-width: 8%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-2 {
+        flex: 1 16%;
+        max-width: 16%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-3 {
+        flex: 1 24%;
+        max-width: 24%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-4 {
+        flex: 1 32%;
+        max-width: 32%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-5 {
+        flex: 1 40%;
+        max-width: 40%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-6 {
+        flex: 1 48%;
+        max-width: 48%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-7 {
+        flex: 1 56%;
+        max-width: 56%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-8 {
+        flex: 1 64%;
+        max-width: 64%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-9 {
+        flex: 1 72%;
+        max-width: 72%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-10 {
+        flex: 1 80%;
+        max-width: 80%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-11 {
+        flex: 1 88%;
+        max-width: 88%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.l-12 {
+        flex: 1 96%;
+        max-width: 96%;
+    }
+}
+
+@media only screen and (min-width: 1201px) {
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-1, .Customized-UI.Grid.Container .Customized-UI.Grid.Item {
+        flex: 1 8%;
+        max-width: 8%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-2 {
+        flex: 1 16%;
+        max-width: 16%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-3 {
+        flex: 1 24%;
+        max-width: 24%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-4 {
+        flex: 1 32%;
+        max-width: 32%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-5 {
+        flex: 1 40%;
+        max-width: 40%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-6 {
+        flex: 1 48%;
+        max-width: 48%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-7 {
+        flex: 1 56%;
+        max-width: 56%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-8 {
+        flex: 1 64%;
+        max-width: 64%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-9 {
+        flex: 1 72%;
+        max-width: 72%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-10 {
+        flex: 1 80%;
+        max-width: 80%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-11 {
+        flex: 1 88%;
+        max-width: 88%;
+    }
+    .Customized-UI.Grid.Container .Customized-UI.Grid.Item.xl-12 {
+        flex: 1 96%;
+        max-width: 96%;
+    }
+}
+
+/* Button */
+
+.Customized-UI.Button {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+.Customized-UI.Button:hover {
+    cursor: pointer;
+}
+
+.Customized-UI.Button:focus {
+    outline: none;
+}
+
+/* Input */
+
+.Customized-UI.Input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+
+.Customized-UI.Input:focus {
+    outline: none;
+}
+
+/* Select */
+.Customized-UI.Select-Search-Input,
+.Customized-UI.Select-Search-Input:focus {
+    background-color: transparent;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    width: 90%;
+}
+
+.Customized-UI.Select {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+}
+
+.Customized-UI.Select-Search-Input-Div {
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    width: 100%;
+}
+
+.Customized-UI.Dropdown-List {
+    width: 100%;
+    border: 1px solid #dddddd;
+    border-top: 0px;
+    margin-top: -3px;
+    position: absolute;
+    display: none;
+    height: auto;
+    max-height: 350px;
+    overflow-x: scroll;
+    background-color: #f9f9f9;
+    z-index: 9999;
+    border-radius: 0 0 5px 5px;
+}
+
+.Customized-UI.Dropdown-List.show {
+    display: inline;
+}
+
+.Customized-UI.Dropdown-List ul {
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.Customized-UI.Dropdown-List ul li {
+    padding: 10px 10px;
+}
+
+.Customized-UI.Dropdown-List ul li:hover {
+    background-color: #f9f9f9;
+}
+
+.Customized-UI.Dropdown-Button:hover {
+    cursor: pointer;
+}
+
+.Customized-UI.Dropdown-Button {
+    float: right;
+}
+
+.Customized-UI-Selected-Item-Container {
+    display:flex;
+    width:100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+
+.Customized-UI-Selected-Item:first {
+    padding-left:0;
+    margin-left:0;
+}
+
+.Customized-UI-Selected-Item {
+    padding:0 15px;
+    padding-right:6px;
+    margin:5px;
+    border:1px solid #dddddd;
+    border-radius: 15px !important;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Switch */
+
+.Customized-UI.Switch-Container {
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #dddddd;
+    padding: 2px;
+}
+
+.Customized-UI.Switch.Button {
+    width: 26px;
+    height: 26px;
+    border-radius: 13px;
+    background-color: #f9f9f9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation-name: positionFalse;
+    animation-duration: 1s;
+}
+
+.Customized-UI.Switch.Status-Container {
+    width: 56px;
+    height: 26px;
+    border-radius: 13px;
+    background-color: #d9d9d9;
+    box-shadow: inset 0px 1px 2px #000;
+    position: relative;
+    animation-name: statusFalse;
+    animation-duration: 1s;
+}
+
+.Customized-UI.Switch.Status-Container.true {
+    animation-name: statusTrue;
+    animation-duration: 3s;
+    background-color: #4BB543;
+}
+
+.Customized-UI.Switch.Button.true {
+    animation-name: positionTrue;
+    animation-duration: 1s;
+    left: 30px;
+}
+
+@keyframes statusTrue {
+    from {
+        background-color: #d9d9d9;
+    }
+
+    to {
+        background-color: #4BB543;
+    }
+}
+
+@keyframes statusFalse {
+    from {
+        background-color: #4BB543;
+    }
+
+    to {
+        background-color: #d9d9d9;
+    }
+}
+
+@keyframes positionTrue {
+    from {
+        left: 0;
+    }
+
+    to {
+        left: 30px;
+    }
+}
+
+@keyframes positionFalse {
+    from {
+        left: 30px;
+    }
+
+    to {
+        left: 0;
+    }
+}
+
+/* TextArea */
+
+.Customized-UI.TextArea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+/* Icon */
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+
+  /* Rules for sizing the icon. */
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
+/* Footer */
+
+.Customized-UI.Footer {
+    width: 100%;
+    min-height: 100px;
+}
+
+.Customized-UI.Footer.BoxShadow {
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+}
+
+/* Sogan */
+
+.Customized-UI.Slogan {
+    text-align: right;
+    align-items: center;
+    display: flex;
+    flex: none;
+    width:100%;
+    height:100%;
+    flex-direction: row-reverse;
+}
+
+/* Header */
+
+.Customized-UI.Header {
+    width: 100%;
+    min-height: 30px;
+    margin-bottom: 10px;
+}
+
+.Customized-UI.Header.BoxShadow {
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+}
+
+/* Logo */
+
+.Customized-UI.Image.Logo {
+    width: auto;
+    height: 35px;
+    margin-right: 5px;
+}
+
+/* SdeiMenu */
+
+.Customized-UI.SideMenu-Open-Icon-Click:hover {
+    cursor: pointer;
+}
+
+.Customized-UI.SideMenu {
+    transition: all 0.5s ease;
+    background-color: #f9f9f9;
+    width: 30%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 9999;
+    box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+}
+
+.Customized-UI.SideMenu-Overlay {
+    transition: all 0.5s ease;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #333333;
+    opacity: 0.6;
+    z-index: 9998;
+}
+
+.Customized-UI.SideMenu.Hide {
+    left: -30%;
+}
+
+.Customized-UI.SideMenu-Overlay.Hide {
+    display: none;
+}
+
+/* Screen breakpoints */
+
+@media (max-width: 320px) {
+    .Customized-UI.SideMenu {
+        width: 70%;
+    }
+    .Customized-UI.SideMenu.Hide {
+        left: -70%;
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    .Customized-UI.SideMenu {
+        width: 60%;
+    }
+    .Customized-UI.SideMenu.Hide {
+        left: -60%;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+    .Customized-UI.SideMenu {
+        width: 60%;
+    }
+    .Customized-UI.SideMenu.Hide {
+        left: -60%;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .Customized-UI.SideMenu {
+        width: 50%;
+    }
+    .Customized-UI.SideMenu.Hide {
+        left: -50%;
+    }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    .Customized-UI.SideMenu {
+        width: 40%;
+    }
+    .Customized-UI.SideMenu.Hide {
+        left: -40%;
+    }
+}
+
+@media only screen and (min-width: 1201px) {
+    .Customized-UI.SideMenu {
+        width: 20%;
+    }
+    .Customized-UI.SideMenu.Hide {
+        left: -20%;
+    }
+}
+
+/*  Hide */
+
+
+@media (max-width: 320px) {
+	.hide-xs {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+   .hide-xs {
+		display: none;
+	}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+   .hide-sm {
+		display: none;
+	}
+}
+
+/* Up and Down */
+@media only screen and (min-width: 768px) {
+   .hide-sm-and-up {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 768px) {
+   .hide-sm-and-down {
+		display: none;
+	}
+}
+/* Up and Down */
+
+
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .hide-md {
+		display: none;
+	}
+}
+
+/* Up and Down */
+@media only screen and (min-width: 1024px) {
+  .hide-md-and-up {
+		display: none;
+	}
+}
+@media only screen and (max-width: 1024px) {
+  .hide-md-and-down {
+		display: none;
+	}
+}
+/* Up and Down */
+
+
+
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  .hide-l {
+		display: none;
+	}
+}
+
+/* Up and Down */
+@media only screen and (min-width: 1200px) {
+  .hide-l-and-up {
+		display: none;
+	}
+}
+@media only screen and (max-width: 1200px) {
+  .hide-l-and-down {
+		display: none;
+	}
+}
+/* Up and Down */
+
+
+@media only screen and (min-width: 1201px) {
+   .hide-xl {
+		display: none;
+	}
+}

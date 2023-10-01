@@ -1,7 +1,8 @@
 import React, { FC } from 'react'
 import { FontsProps } from './Fonts.types'
+var fontIsImported:Array<string> = [];
 export const Fonts: FC<FontsProps> = ({ href }: FontsProps) => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== "undefined" && href && fontIsImported.includes(href)) {
         let styleSheetLink = document.createElement("link");
         let fontsGoogleApiLink = document.createElement("link");
         let fontsGstaticLink = document.createElement("link");
@@ -13,6 +14,7 @@ export const Fonts: FC<FontsProps> = ({ href }: FontsProps) => {
         document.head.appendChild(styleSheetLink);
         document.head.appendChild(fontsGoogleApiLink);
         document.head.appendChild(fontsGstaticLink);
+        fontIsImported.push(href)
     }
     return (
         <></>

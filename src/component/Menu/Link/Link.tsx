@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { ClassNames } from '../../ClassNames'
 import { Icon } from "../../Icon"
 import { Styles } from '../../Styles'
-import { LinkProps, LinkStylesProps } from './Link.types'
+import { LinkProps } from './Link.types'
 import { TemplateManager } from '../../template'
 export const Link: FC<LinkProps> = ({ href, children, icon, onClick, style, styles, className, classNames, iconSize }: LinkProps) => {
     let stylIcon = new Styles(TemplateManager.getIcon())

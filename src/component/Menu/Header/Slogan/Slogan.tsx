@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { SloganProps } from "./Slogan.types";
-import './Slogan.css'
+//import './Slogan.css'
 import { ClassNames } from '../../../ClassNames';
 import { Styles } from '../../../Styles';
 import { TemplateManager } from '../../../template';

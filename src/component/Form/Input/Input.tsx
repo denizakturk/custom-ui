@@ -1,9 +1,9 @@
-import React, { ChangeEvent, ChangeEventHandler, FC } from "react";
+import React, { ChangeEvent, FC } from "react";
 import { ClassNames } from "../../ClassNames";
 import { Styles } from "../../Styles";
 import { TemplateManager } from "../../template";
 import { InputProps } from "./Input.types";
-import './Input.css'
+//import './Input.css'
 
 export const Input: FC<InputProps> = ({ name, defaultValue, type, style, className, classNames, onChange, placeholder }: InputProps) => {
     let inputStyle = new Styles(TemplateManager.getInput())

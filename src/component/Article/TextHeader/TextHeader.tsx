@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import { TextHeaderProps } from "./TextHeader.types"
-import './TextHeader.css'
+//import './TextHeader.css'
 import { ClassNames } from '../../ClassNames'
 import { Styles } from '../../Styles'
 import { TemplateManager } from '../../template'
