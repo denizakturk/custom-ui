@@ -14,7 +14,7 @@ export const SideMenu: FC<SideMenuProps> = ({ children, linkGroups, style, style
     styl.add(style)
 
     let stylOpenMenuIcon = new Styles(TemplateManager.getIcon())
-    stylOpenMenuIcon.add({ verticalAlign: "middle", float: "left" })
+    stylOpenMenuIcon.add({ verticalAlign: "middle", float: "right" })
     stylOpenMenuIcon.add(styles?.openMenuIcon)
 
     let stylCloseMenuLink = new Styles(TemplateManager.getLink())

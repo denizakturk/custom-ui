@@ -17,7 +17,7 @@ export const Header: FC<HeaderProps> = ({ style, widthLimit, className, classNam
   styl.add(style)
 
   let stylLogoGridItem = new Styles(TemplateManager.getGridItem())
-  stylLogoGridItem.add({ textAlign: "center", margin: "0" })
+  stylLogoGridItem.add({ textAlign: "left", margin: "0" })
   stylLogoGridItem.add(styles?.logoGridItem)
 
   let stylTextHeader = new Styles(TemplateManager.getTextHeader())
@@ -39,18 +39,14 @@ export const Header: FC<HeaderProps> = ({ style, widthLimit, className, classNam
       {children ? children :
         <GridContainer style={{ padding: "0" }} widthLimit={widthLimit}>
           <GridItem col={12} hideAndUp={"sm"} style={stylLogoGridItem.getStyle()}>
-            <TextHeader size="h5" style={stylTextHeader.getStyle()}>
-              <SideMenu linkGroups={linkGroups} />
               {logo ? <Logo link={logoLink} src={logo ?? ""} /> : null}
               {brandName}
-            </TextHeader>
+              <SideMenu linkGroups={linkGroups} />
           </GridItem>
           <GridItem col={6} hideAndDown={"sm"} style={{ margin: "0" }}>
-            <TextHeader size="h5" style={stylTextHeader.getStyle()}>
               <SideMenu linkGroups={linkGroups} />
               {logo ? <Logo link={logoLink} src={logo ?? ""} /> : null}
               {brandName}
-            </TextHeader>
           </GridItem>
           <GridItem col={6} hideAndDown={"sm"} style={stylSloganGridItem.getStyle()}>
             {slogan ? <Slogan>{slogan}</Slogan> : null}
