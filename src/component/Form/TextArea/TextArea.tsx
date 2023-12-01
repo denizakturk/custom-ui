@@ -3,9 +3,11 @@ import { ClassNames } from "../../ClassNames";
 import { Styles } from "../../Styles";
 import { TemplateManager } from "../../template";
 import { TextAreaProps } from "./TextArea.types";
+import newid from "../../helper";
 //import './TextArea.css'
 
 export const TextArea: FC<TextAreaProps> = ({ name, value, rows, readOnly, id, className, classNames, style, resize, onChange }: TextAreaProps) => {
+    if(!id){ id = newid()}
     let textAreaClassName = new ClassNames(['Customized-UI', 'TextArea'])
     let textAreaStyle = new Styles(TemplateManager.getTextArea())
     textAreaStyle.add(style)

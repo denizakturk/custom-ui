@@ -9,3 +9,10 @@ export class ContentHelper {
         return <div dangerouslySetInnerHTML={this.createMarkup(content)}></div>
     }
 }
+
+let lastId = 0;
+
+export default function newid(prefix='id') {
+    lastId++;
+    return `${prefix}${lastId}`;
+}
