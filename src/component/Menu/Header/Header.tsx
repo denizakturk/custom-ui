@@ -39,13 +39,13 @@ export const Header: FC<HeaderProps> = ({ style, widthLimit, className, classNam
       {children ? children :
         <GridContainer style={{ padding: "0" }} widthLimit={widthLimit}>
           <GridItem col={12} hideAndUp={"sm"} style={stylLogoGridItem.getStyle()}>
-              {logo ? <Logo link={logoLink} src={logo ?? ""} /> : null}
+              {logo ? <Logo link={logoLink} src={logo ?? ""} alt={brandName??"logo"} /> : null}
               {brandName}
               <SideMenu linkGroups={linkGroups} />
           </GridItem>
           <GridItem col={6} hideAndDown={"sm"} style={{ margin: "0" }}>
               <SideMenu linkGroups={linkGroups} />
-              {logo ? <Logo link={logoLink} src={logo ?? ""} /> : null}
+              {logo ? <Logo link={logoLink} src={logo ?? ""} alt={brandName??"logo"} /> : null}
               {brandName}
           </GridItem>
           <GridItem col={6} hideAndDown={"sm"} style={stylSloganGridItem.getStyle()}>
