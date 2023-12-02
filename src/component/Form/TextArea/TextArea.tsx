@@ -3,11 +3,10 @@ import { ClassNames } from "../../ClassNames";
 import { Styles } from "../../Styles";
 import { TemplateManager } from "../../template";
 import { TextAreaProps } from "./TextArea.types";
-import newid from "../../helper";
 //import './TextArea.css'
 
-export const TextArea: FC<TextAreaProps> = ({ name, value, rows, readOnly, id, className, classNames, style, resize, onChange }: TextAreaProps) => {
-    if(!id){ id = newid()}
+export const TextArea: FC<TextAreaProps> = ({ name, value, rows, readOnly, id, className, classNames, style, resize, onChange, ref }: TextAreaProps) => {
+    if(ref){ref = React.createRef<HTMLTextAreaElement>();}
     let textAreaClassName = new ClassNames(['Customized-UI', 'TextArea'])
     let textAreaStyle = new Styles(TemplateManager.getTextArea())
     textAreaStyle.add(style)
@@ -21,7 +20,7 @@ export const TextArea: FC<TextAreaProps> = ({ name, value, rows, readOnly, id, c
 
     return (
         <React.Fragment>
-            <textarea defaultValue={value} onChange={changeEvent} name={name ?? ""} rows={rows ?? 3} readOnly={readOnly} id={id ?? ""} className={textAreaClassName.getName()} style={textAreaStyle.getStyle()}/>
+            <textarea defaultValue={value} onChange={changeEvent} name={name ?? ""} rows={rows ?? 3} readOnly={readOnly} className={textAreaClassName.getName()} style={textAreaStyle.getStyle()} ref={ref}/>
         </React.Fragment>
     )
 }

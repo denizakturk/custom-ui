@@ -1,4 +1,4 @@
-import { ChangeEvent, HTMLInputTypeAttribute } from "react"
+import { ChangeEvent, HTMLInputTypeAttribute, RefObject } from "react"
 import { StylesProps } from "../../../types.types"
 
 export interface TextAreaProps extends StylesProps {
@@ -9,4 +9,5 @@ export interface TextAreaProps extends StylesProps {
     name?: string
     resize?: boolean
     onChange?: (changeEvent: ChangeEvent) => any
+    ref?: RefObject<HTMLTextAreaElement>
 }

@@ -4,11 +4,12 @@ import { IconProps } from "./Icon.types";
 import { ClassNames } from '../ClassNames';
 import { Styles } from '../Styles';
 import { TemplateManager } from '../template';
-import newid from '../helper';
 var fontLoad: boolean = false
 
-export const Icon: FC<IconProps> = ({ name, size, style, onClick, className, classNames, id }: IconProps) => {
-    if(!id){ id = newid()}
+export const Icon: FC<IconProps> = ({ name, size, style, onClick, className, classNames, id, ref }: IconProps) => {
+    if(!ref){
+        ref = React.createRef<HTMLSpanElement>();
+    }
     let styl = new Styles(TemplateManager.getIcon())
     styl.add(style)
     let clsN = new ClassNames(["material-icons"])
@@ -24,7 +25,7 @@ export const Icon: FC<IconProps> = ({ name, size, style, onClick, className, cla
         clsN.add("md-" + size)
     }
     return (
-        <span className={clsN.getName()} style={styl.getStyle()} onClick={onClick} id={id ?? ""}>
+        <span className={clsN.getName()} style={styl.getStyle()} onClick={onClick} ref={ref} id={id}>
             {name}
         </span>
     )

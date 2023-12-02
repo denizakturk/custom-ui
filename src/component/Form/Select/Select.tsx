@@ -6,7 +6,14 @@ import { TemplateManager } from '../../template'
 //import './Select.css'
 import { Icon } from '../../Icon'
 import { IconStyle } from '../../template.classes'
+let lastId = 0;
+function getNextId(){lastId++;return lastId;}
 export const Select: FC<SelectProps> = ({ name, values, placeholder, className, classNames, style, styles, selectedValue, selectedValues, isSearchable = false, onChange, isMultiple }: SelectProps) => {
+    const searchInputR = React.createRef<HTMLInputElement>();
+    const selectValueR = React.createRef<HTMLInputElement>();
+    const dropDownListRef = React.createRef<HTMLDivElement>();
+    const dropDownIconRef  =React.createRef<HTMLSpanElement>();
+    const selectAreaRef = React.createRef<HTMLDivElement>();
     let mainDivStyle = new Styles(TemplateManager.getSelect())
     let dropDownListDivStyle = new Styles(TemplateManager.getSelect())
     let dropdownIconStyle = new Styles(new IconStyle(TemplateManager.getSelect()))
@@ -30,9 +37,9 @@ export const Select: FC<SelectProps> = ({ name, values, placeholder, className, 
     let toggleDropdownShow = () => {
         dropdownShow = !dropdownShow
         if (dropdownShow) {
-            document.getElementById('Customized-UI-Select-Dropdown-List' + name)?.classList.add('show')
+            dropDownListRef.current?.classList.add('show')
         } else {
-            document.getElementById('Customized-UI-Select-Dropdown-List' + name)?.classList.remove('show')
+            dropDownListRef.current?.classList.remove('show')
         }
     }
     var multiple: SelectValueProps[] = selectedValues ?? [];
@@ -53,29 +60,25 @@ export const Select: FC<SelectProps> = ({ name, values, placeholder, className, 
     }
 
     let setValue = (value: SelectValueProps) => {
-        document.getElementById('Customized-UI-Select-Search-Input' + name)?.setAttribute('value', value.name)
-        document.getElementById('Customized-UI-Select-Value' + name)?.setAttribute('value', value.id)
+        searchInputR.current?.setAttribute('value', value.name)
+        selectValueR.current?.setAttribute('value', value.id)
+    
         if (onChange) { onChange(value) }
         toggleDropdownShow()
     }
     if (typeof window !== 'undefined') {
-        var searchInputRef = document.getElementById('Customized-UI-Select-Search-Input' + name);
-        var dropdownIconRef = document.getElementById('Customized-UI-Select-Dropdown-Icon' + name);
-        var selectArea = document.getElementById('Customized-UI-Select-Area' + name);
-    }
-    if (typeof window !== 'undefined') {
         document.addEventListener('click', function (event) {
-            if (searchInputRef && dropdownIconRef && selectArea && event.target) {
-                if (!searchInputRef.contains(event.target as Node) && !dropdownIconRef.contains(event.target as Node) && !selectArea.contains(event.target as Node)) {
+            if (searchInputR && dropDownIconRef && selectAreaRef && event.target) {
+                if (!searchInputR.current?.contains(event.target as Node) && !dropDownIconRef.current?.contains(event.target as Node) && !selectAreaRef.current?.contains(event.target as Node)) {
                     dropdownShow = false
-                    document.getElementById('Customized-UI-Select-Dropdown-List' + name)?.classList.remove('show')
+                    dropDownListRef.current?.classList.remove('show')
                 }
             }
         });
     }
     return (
         <React.Fragment>
-            <div className={clsN.getName()} id={"Customized-UI-Select-Area" + name} style={mainDivStyle.getStyle()}>
+            <div className={clsN.getName()} ref={selectAreaRef} style={mainDivStyle.getStyle()}>
                 {isMultiple && multiple?.length ?
                     <div className={"Customized-UI-Selected-Item-Container"} style={multipleItemContainerStyle?.getStyle()}>
                         {multiple?.map((val, index) => {
@@ -83,12 +86,12 @@ export const Select: FC<SelectProps> = ({ name, values, placeholder, className, 
                         })}
                     </div>
                     : null}
-                <input id={"Customized-UI-Select-Value" + name} type="hidden" value={selectedValue?.id} name={name ?? "select-value"} />
+                <input ref={selectValueR} type="hidden" value={selectedValue?.id} name={name ?? "select-value"} />
                 <div className={clsSearchInputDiv.getName()}>
-                    <input type="text" placeholder={placeholder ?? ""} id={"Customized-UI-Select-Search-Input" + name} className={clsSearchInput.getName()} readOnly={!isSearchable} value={selectedValue?.name} style={searchInputStyle.getStyle()} />
-                    <Icon id={"Customized-UI-Select-Dropdown-Icon" + name} name='expand_more' className={clsDropdownButton.getName()} onClick={toggleDropdownShow} style={dropdownIconStyle.getStyle()} />
+                    <input type="text" placeholder={placeholder ?? ""} ref={searchInputR} className={clsSearchInput.getName()} readOnly={!isSearchable} value={selectedValue?.name} style={searchInputStyle.getStyle()} />
+                    <Icon id={dropDownIconRef.current?.id} name='expand_more' className={clsDropdownButton.getName()} onClick={toggleDropdownShow} style={dropdownIconStyle.getStyle()} />
                 </div>
-                <div id={"Customized-UI-Select-Dropdown-List" + name} className={clsDropdownList.getName()} style={dropDownListDivStyle.getStyle()}>
+                <div ref={dropDownListRef} className={clsDropdownList.getName()} style={dropDownListDivStyle.getStyle()}>
                     <ul style={{ listStyle: 'none', margin: 0 }}>
                         {values.map((val, index) => {
                             return (

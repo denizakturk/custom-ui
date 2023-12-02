@@ -9,6 +9,8 @@ import { ClassNames } from '../../ClassNames';
 import { Styles } from '../../Styles';
 import { TemplateManager } from '../../template';
 export const SideMenu: FC<SideMenuProps> = ({ children, linkGroups, style, styles, classNameBtn, classNamesBtn, classNameSideMenu, classNamesSideMenu, classNameOverlay, classNamesOverlay, openMenuIconName }: SideMenuProps) => {
+    const sideBarMenuRef = React.createRef<HTMLDivElement>();
+    const sideBarMenuOverlayRef = React.createRef<HTMLDivElement>();
     let styl = new Styles(TemplateManager.getSideMenu())
     styl.add({ overflowY: "scroll" })
     styl.add(style)
@@ -37,14 +39,14 @@ export const SideMenu: FC<SideMenuProps> = ({ children, linkGroups, style, style
     let toggleMenu = () => {
         if (menuIsOpen) {
             if (typeof document != "undefined") {
-                document.getElementById('Customized-UI-Sidebar-Menu')?.classList.add('Hide')
-                document.getElementById('Customized-UI-Sidebar-Menu-Overlay')?.classList.add('Hide')
+                sideBarMenuRef.current?.classList.add('Hide')
+                sideBarMenuOverlayRef.current?.classList.add('Hide')
                 menuIsOpen = false
             }
         } else {
             if (typeof document != "undefined") {
-                document.getElementById('Customized-UI-Sidebar-Menu')?.classList.remove('Hide')
-                document.getElementById('Customized-UI-Sidebar-Menu-Overlay')?.classList.remove('Hide')
+                sideBarMenuRef.current?.classList.remove('Hide')
+                sideBarMenuOverlayRef.current?.classList.remove('Hide')
                 menuIsOpen = true
             }
         }
@@ -54,7 +56,7 @@ export const SideMenu: FC<SideMenuProps> = ({ children, linkGroups, style, style
             <a onClick={toggleMenu} className={clsNBtn.getName()}>
                 <Icon name={openMenuIconName ?? "menu_open"} size={36} style={stylOpenMenuIcon.getStyle()} />
             </a>
-            <div className={clsNSideMenu.getName()} id="Customized-UI-Sidebar-Menu" style={styl.getStyle()}>
+            <div className={clsNSideMenu.getName()} ref={sideBarMenuRef} style={styl.getStyle()}>
                 <React.Fragment>
                     <Link icon="close" onClick={toggleMenu} styles={{ link: stylCloseMenuLink.getStyle(), icon: stylCloseMenuIcon.getStyle() }} />
                     {children ? children : linkGroups ?
@@ -84,7 +86,7 @@ export const SideMenu: FC<SideMenuProps> = ({ children, linkGroups, style, style
 
 
             </div>
-            <div className={clsNOverlay.getName()} id="Customized-UI-Sidebar-Menu-Overlay" onClick={toggleMenu}></div>
+            <div className={clsNOverlay.getName()} ref={sideBarMenuOverlayRef} onClick={toggleMenu}></div>
         </React.Fragment>
     )
 }

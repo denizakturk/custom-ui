@@ -2,10 +2,12 @@ import React, { FC } from "react";
 import { SwitchProps } from './Switch.types'
 //import './Switch.css'
 export const Switch: FC<SwitchProps> = ({ className, classNames, id, style, styles, defaultStatus, name, value, radio=false, onChange }: SwitchProps) => {
+
+    const statusContainerRef = React.createRef<HTMLDivElement>()
+    const switchButtonRef = React.createRef<HTMLDivElement>()
+    const checkboxRef = React.createRef<HTMLInputElement>()
+
     let groupElements: NodeListOf<HTMLInputElement>
-    var statusContainer: HTMLElement | null
-    let switchButton: HTMLElement | null
-    let checkbox: HTMLInputElement | null
     let checkboxIdentity: string = (name ?? "") + (value ?? "")
     let switchStatus = false;
 
@@ -21,8 +23,8 @@ export const Switch: FC<SwitchProps> = ({ className, classNames, id, style, styl
             allPassive()
         }
         switchStatus = !switchStatus
-        if (checkbox) {
-            checkbox.checked = switchStatus
+        if (checkboxRef.current) {
+            checkboxRef.current.checked = switchStatus
             if (onChange) {
                 if(switchStatus){
                     onChange(value ?? "")
@@ -33,24 +35,24 @@ export const Switch: FC<SwitchProps> = ({ className, classNames, id, style, styl
             }
         }
         if (switchStatus) {
-            if (!statusContainer?.classList?.contains('true')) {
-                statusContainer?.classList?.add('true')
+            if (!statusContainerRef.current?.classList?.contains('true')) {
+                statusContainerRef.current?.classList?.add('true')
             }
-            if (!switchButton?.classList?.contains('true')) {
-                switchButton?.classList?.add('true')
+            if (!switchButtonRef.current?.classList?.contains('true')) {
+                switchButtonRef.current?.classList?.add('true')
             }
         } else {
-            if (statusContainer?.classList?.contains('true')) {
-                statusContainer?.classList?.remove('true')
+            if (statusContainerRef.current?.classList?.contains('true')) {
+                statusContainerRef.current?.classList?.remove('true')
             }
-            if (switchButton?.classList?.contains('true')) {
-                switchButton?.classList?.remove('true')
+            if (switchButtonRef.current?.classList?.contains('true')) {
+                switchButtonRef.current?.classList?.remove('true')
             }
         }
     }
     let setDefaultStatus = () => {
-        if (checkbox && defaultStatus) {
-            checkbox.checked = false
+        if (checkboxRef?.current && defaultStatus) {
+            checkboxRef.current.checked = false
             switchStatus = false
             setTimeout(()=>{toggleSwitch()}, 500)
         }
@@ -59,17 +61,12 @@ export const Switch: FC<SwitchProps> = ({ className, classNames, id, style, styl
         return document.querySelectorAll('.Customized-UI.Switch.Button' + (name ? "." + name : "") + '.true:not(.' + checkboxIdentity + ')') as NodeListOf<HTMLInputElement>;
     }
     if (typeof window != "undefined") {
-        statusContainer = document.getElementById('Customized-UI-Switch-StatusContainer' + (checkboxIdentity ?? "")) as HTMLElement | null
-        switchButton = document.getElementById("Customized-UI-Switch-Button" + (checkboxIdentity ?? "")) as HTMLElement | null
-        checkbox = document.getElementById(
-            "Customized-UI-Checkbox-" + (checkboxIdentity ?? ""),
-        ) as HTMLInputElement | null;
         setDefaultStatus()
     }
     return (<div className="Customized-UI Switch-Container">
-        <div id={"Customized-UI-Switch-StatusContainer" + (checkboxIdentity ?? "")} className="Customized-UI Switch Status-Container">
-            <div id={"Customized-UI-Switch-Button" + (checkboxIdentity ?? "")} className={"Customized-UI Switch Button" + (name ? " " + name : "") + (checkboxIdentity ? " " + checkboxIdentity : "")} onClick={toggleSwitch}></div>
-            <input id={"Customized-UI-Checkbox-" + (checkboxIdentity ?? "")} type="checkbox" name={name} style={{ display: "none" }} value={value} defaultChecked={switchStatus} />
+        <div ref={statusContainerRef} className="Customized-UI Switch Status-Container">
+            <div ref={switchButtonRef} className={"Customized-UI Switch Button" + (name ? " " + name : "") + (checkboxIdentity ? " " + checkboxIdentity : "")} onClick={toggleSwitch}></div>
+            <input ref={checkboxRef} type="checkbox" name={name} style={{ display: "none" }} value={value} defaultChecked={switchStatus} />
         </div>
     </div>)
 }
